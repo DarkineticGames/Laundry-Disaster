@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://c5p2jvsdkh7m0"]
+
+[ext_resource type="Texture2D" uid="uid://c2u8rvcobqs31" path="res://icon.svg" id="1_ovi1h"]
+[ext_resource type="PackedScene" uid="uid://c5ih6ghhdewpe" path="res://sock.tscn" id="2_uyhia"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_s7wsd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lr715"]
+size = Vector2(712, 20)
+
+[node name="basic" type="Node2D" unique_id=1595250606]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=2080934746]
+physics_material_override = SubResource("PhysicsMaterial_s7wsd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=724604440]
+position = Vector2(11, 23)
+shape = SubResource("RectangleShape2D_lr715")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=2084250323]
+position = Vector2(11.500015, 40)
+scale = Vector2(5.492187, 0.375)
+texture = ExtResource("1_ovi1h")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1434041213]
+
+[node name="sock" parent="." unique_id=582848631 instance=ExtResource("2_uyhia")]
