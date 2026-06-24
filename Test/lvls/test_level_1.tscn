@@ -16,11 +16,17 @@
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_xgo4x"]
 distance = 5.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s7wsd"]
+size = Vector2(118.92441, 114)
+
 [node name="TestLevel_1" type="Node2D" unique_id=1865156233]
+position = Vector2(6, 16)
+metadata/_edit_horizontal_guides_ = [-552.0]
 
 [node name="Level-Num" parent="." unique_id=1727256295 instance=ExtResource("1_fdsja")]
 
 [node name="Basic ground" type="StaticBody2D" parent="." unique_id=474472950]
+position = Vector2(1, 26)
 physics_material_override = SubResource("PhysicsMaterial_s7wsd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Basic ground" unique_id=1796750294]
@@ -28,12 +34,27 @@ position = Vector2(11, 23)
 shape = SubResource("WorldBoundaryShape2D_xgo4x")
 
 [node name="Sprite2D" type="Sprite2D" parent="Basic ground" unique_id=1618377015]
-position = Vector2(-2462.9995, 114)
+position = Vector2(-2461, 68)
 scale = Vector2(302.70313, 1.53125)
 texture = ExtResource("1_fljj1")
 
 [node name="Player" parent="." unique_id=582848631 instance=ExtResource("2_fcqv5")]
-position = Vector2(-3, -13)
+position = Vector2(381, -34)
+
+[node name="next_level" parent="." unique_id=715973679 instance=ExtResource("5_87dkp")]
+position = Vector2(448, -148)
+next_level_scene = ExtResource("6_yuong")
+
+[node name="GUI" parent="." unique_id=1727581627 instance=ExtResource("7_vxtmc")]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1432000247]
+visible = false
+position = Vector2(-516, 40)
+scale = Vector2(1, 0.56)
+texture = ExtResource("8_fdsja")
+
+[node name="soap_bubble" parent="." unique_id=657462297 instance=ExtResource("10_gvbwv")]
+position = Vector2(-420, -52)
 
 [node name="Platforms" type="Node" parent="." unique_id=2073016836]
 
@@ -55,17 +76,14 @@ position = Vector2(349, -92)
 [node name="TestPlatform" parent="Platforms" unique_id=1503127728 instance=ExtResource("4_dxjw2")]
 position = Vector2(442, -103)
 
-[node name="next_level" parent="." unique_id=715973679 instance=ExtResource("5_87dkp")]
-position = Vector2(448, -148)
-next_level_scene = ExtResource("6_yuong")
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=490909952]
 
-[node name="GUI" parent="." unique_id=1727581627 instance=ExtResource("7_vxtmc")]
+[node name="Sprite2D2" type="Sprite2D" parent="StaticBody2D" unique_id=564782129]
+position = Vector2(283.5, -361)
+scale = Vector2(11.6796875, 1)
+texture = ExtResource("1_fljj1")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1432000247]
-visible = false
-position = Vector2(-516, 40)
-scale = Vector2(1, 0.56)
-texture = ExtResource("8_fdsja")
-
-[node name="soap_bubble" parent="." unique_id=657462297 instance=ExtResource("10_gvbwv")]
-position = Vector2(-420, -52)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1324444563]
+position = Vector2(323.50003, -362)
+scale = Vector2(11.6796875, 1)
+shape = SubResource("RectangleShape2D_s7wsd")

@@ -218,7 +218,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_kqtwu"]
 resource_name = "hit"
-length = 0.19999999999999998
+length = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -276,5 +276,9 @@ debug_color = Color(0.8509804, 0, 0.09803922, 0.41960785)
 
 [node name="HitAnimationPlayer" type="AnimationPlayer" parent="." unique_id=410363253]
 libraries/ = SubResource("AnimationLibrary_6eyoc")
+
+[node name="FlipTimer" type="Timer" parent="." unique_id=1163122859]
+wait_time = 5.0
+autostart = true
 
 [connection signal="body_entered" from="Hurtbox" to="." method="_on_hurtbox_body_entered"]
