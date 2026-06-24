@@ -6,7 +6,7 @@
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_s7wsd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lr715"]
-size = Vector2(712, 20)
+size = Vector2(712, 52)
 
 [node name="basic" type="Node2D" unique_id=1595250606]
 
@@ -18,10 +18,22 @@ position = Vector2(11, 23)
 shape = SubResource("RectangleShape2D_lr715")
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=2084250323]
+position = Vector2(7, 24)
+scale = Vector2(5.492187, 0.375)
+texture = ExtResource("1_ovi1h")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=393206448]
+position = Vector2(-38, -190)
+physics_material_override = SubResource("PhysicsMaterial_s7wsd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=2046624885]
+position = Vector2(11, 39)
+shape = SubResource("RectangleShape2D_lr715")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2" unique_id=731629934]
 position = Vector2(11.500015, 40)
 scale = Vector2(5.492187, 0.375)
 texture = ExtResource("1_ovi1h")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1434041213]
-
 [node name="sock" parent="." unique_id=582848631 instance=ExtResource("2_uyhia")]
+position = Vector2(0, -21)

@@ -125,6 +125,7 @@ position = Vector2(3.5, -0.5)
 shape = SubResource("CircleShape2D_s7rlf")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=404427662]
+ignore_rotation = false
 zoom = Vector2(2, 2)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=919824398]
@@ -133,3 +134,5 @@ scale = Vector2(1.875, 2.0625)
 sprite_frames = SubResource("SpriteFrames_s7wsd")
 animation = &"new_animation"
 autoplay = "default"
+
+[node name="Timer" type="Timer" parent="." unique_id=2102118668]
