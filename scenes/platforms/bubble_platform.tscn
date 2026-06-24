@@ -1,7 +1,103 @@
 [gd_scene format=3 uid="uid://dmaoyg5k3iw5x"]
 
 [ext_resource type="Script" uid="uid://cl4u4elehira2" path="res://scripts/bubble_platform.gd" id="1_6giry"]
-[ext_resource type="Texture2D" uid="uid://dj73oevc808nc" path="res://Test/assets/bubble platform.png" id="1_hr3nj"]
+[ext_resource type="Texture2D" uid="uid://p0fg2bk0epuw" path="res://assets/platforms/water_bubble.png" id="2_n0cff"]
+[ext_resource type="Texture2D" uid="uid://dnwt2xpsmxcxc" path="res://assets/platforms/water_bubble_pop.png" id="3_pp5ow"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nahsy"]
+atlas = ExtResource("2_n0cff")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hhjy8"]
+atlas = ExtResource("3_pp5ow")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ktj5b"]
+atlas = ExtResource("3_pp5ow")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t81cp"]
+atlas = ExtResource("3_pp5ow")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c8u6m"]
+atlas = ExtResource("3_pp5ow")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4eawc"]
+atlas = ExtResource("3_pp5ow")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lcf42"]
+atlas = ExtResource("3_pp5ow")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pp5ow"]
+atlas = ExtResource("3_pp5ow")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4k0mt"]
+atlas = ExtResource("3_pp5ow")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ktiu5"]
+atlas = ExtResource("3_pp5ow")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xvq10"]
+atlas = ExtResource("3_pp5ow")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6pl1w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nahsy")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hhjy8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ktj5b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t81cp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c8u6m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4eawc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lcf42")
+}],
+"loop": 0,
+"name": &"pop",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pp5ow")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4k0mt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ktiu5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xvq10")
+}],
+"loop": 0,
+"name": &"respawn",
+"speed": 10.0
+}]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jnqa7"]
 height = 26.000813
@@ -12,16 +108,15 @@ size = Vector2(20, 4.5)
 [node name="BubblePlatform" type="StaticBody2D" unique_id=869779138]
 script = ExtResource("1_6giry")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=138896652]
-position = Vector2(0, 0.49999964)
-scale = Vector2(0.26, 0.21)
-texture = ExtResource("1_hr3nj")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1573699943]
+position = Vector2(-0.5, 0.49999943)
+scale = Vector2(1.03125, 0.90625006)
+sprite_frames = SubResource("SpriteFrames_6pl1w")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1370504109]
 rotation = -1.57039
 scale = Vector2(0.99999994, 0.99999994)
 shape = SubResource("CapsuleShape2D_jnqa7")
-one_way_collision = true
 one_way_collision_direction = Vector2(-1, 0)
 
 [node name="Area2D" type="Area2D" parent="." unique_id=933112466]
@@ -30,8 +125,12 @@ one_way_collision_direction = Vector2(-1, 0)
 position = Vector2(0, -9.75)
 shape = SubResource("RectangleShape2D_6pl1w")
 
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D" unique_id=1215035876]
+position = Vector2(0, 10)
+shape = SubResource("RectangleShape2D_6pl1w")
+
 [node name="Timer" type="Timer" parent="." unique_id=1785805027]
-wait_time = 0.15
+wait_time = 0.05
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

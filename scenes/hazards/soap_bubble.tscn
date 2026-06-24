@@ -1,26 +1,26 @@
 [gd_scene format=3 uid="uid://b4udsnq4et8p8"]
 
-[ext_resource type="Texture2D" uid="uid://c2u8rvcobqs31" path="res://icon.svg" id="1_1ywwd"]
+[ext_resource type="Script" uid="uid://dm30qlfthci5b" path="res://scripts/soap_bubble.gd" id="1_78epd"]
+[ext_resource type="Texture2D" uid="uid://chrwxb1ttlsb7" path="res://assets/hazards/bubble.png" id="2_78epd"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6pl1w"]
-size = Vector2(114, 114)
+[sub_resource type="CircleShape2D" id="CircleShape2D_bba0r"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jnqa7"]
-size = Vector2(128, 128)
+[sub_resource type="CircleShape2D" id="CircleShape2D_rcn2q"]
+radius = 11.0
 
 [node name="soap_bubble" type="StaticBody2D" unique_id=657462297 groups=["Damage"]]
 collision_layer = 5
 collision_mask = 3
+script = ExtResource("1_78epd")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=490145972]
-texture = ExtResource("1_1ywwd")
+texture = ExtResource("2_78epd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1055338481]
-position = Vector2(0, -1)
-shape = SubResource("RectangleShape2D_6pl1w")
+shape = SubResource("CircleShape2D_bba0r")
 
 [node name="Hurtbox" type="Area2D" parent="." unique_id=1411494085]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=100105549]
-shape = SubResource("RectangleShape2D_jnqa7")
+shape = SubResource("CircleShape2D_rcn2q")
 debug_color = Color(0.96862745, 0, 0, 0.41960785)

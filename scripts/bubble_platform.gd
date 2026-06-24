@@ -2,14 +2,19 @@ extends StaticBody2D
 
 @export var respawn_time: float = 3.0       # how long until it comes back
 @export var fade_duration: float = 0.4
+@export var sink_distance := 8.0
+@export var sink_duration := 0.15
 
 @onready var timer: Timer = $Timer
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 @onready var area_2d: Area2D = $Area2D
+@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 var is_popped: bool = false
+var start_position: Vector2
 
 func _ready() -> void:
+	start_position = position
 	timer.one_shot = true
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
@@ -19,6 +24,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		timer.start()
 
 func _on_timer_timeout() -> void:
+	await _sink()
 	_pop()
 
 func _pop() -> void:
@@ -26,17 +32,33 @@ func _pop() -> void:
 
 	collision_shape_2d.disabled = true
 	area_2d.monitoring = false
-
-	var tween := create_tween()
-	tween.tween_property(self, "modulate:a", 0.0, fade_duration)
+	
+	animated_sprite.play("pop")
+	#var tween := create_tween()
+	#tween.tween_property(self, "modulate:a", 0.0, fade_duration)
 
 	await get_tree().create_timer(respawn_time).timeout
 	_respawn()
 
 func _respawn() -> void:
 	is_popped = false
+	position = start_position
+	animated_sprite.play("respawn")
 	collision_shape_2d.disabled = false
 	area_2d.monitoring = true
+	
 
+	#var tween := create_tween()
+	#tween.tween_property(self, "modulate:a", 1.0, fade_duration)
+
+func _sink():
 	var tween := create_tween()
-	tween.tween_property(self, "modulate:a", 1.0, fade_duration)
+
+	tween.tween_property(
+		self,
+		"position:y",
+		start_position.y + sink_distance,
+		sink_duration
+	)
+
+	await tween.finished

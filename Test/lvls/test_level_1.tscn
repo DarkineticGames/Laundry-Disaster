@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://m8ha44y4wjsq" path="res://scenes/UI/gui.tscn" id="7_vxtmc"]
 [ext_resource type="Texture2D" uid="uid://bi4nnfc0ckvs3" path="res://Test/assets/ruler_PNG82-249524369.png" id="8_fdsja"]
 [ext_resource type="PackedScene" uid="uid://b4udsnq4et8p8" path="res://scenes/hazards/soap_bubble.tscn" id="10_gvbwv"]
-[ext_resource type="PackedScene" uid="uid://b2jn0rqnanb8l" path="res://scenes/hazards/bubbles_pipe.tscn" id="11_b4eok"]
+[ext_resource type="PackedScene" uid="uid://dy3k5au2e5g1t" path="res://scenes/hazards/soap_bubbles_pipe.tscn" id="11_b4eok"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_s7wsd"]
 
@@ -34,7 +34,7 @@ scale = Vector2(302.70313, 1.53125)
 texture = ExtResource("1_fljj1")
 
 [node name="Player" parent="." unique_id=582848631 instance=ExtResource("2_fcqv5")]
-position = Vector2(-3, -13)
+position = Vector2(439, -25)
 
 [node name="Platforms" type="Node" parent="." unique_id=2073016836]
 
@@ -56,6 +56,9 @@ position = Vector2(349, -92)
 [node name="TestPlatform" parent="Platforms" unique_id=1503127728 instance=ExtResource("4_dxjw2")]
 position = Vector2(442, -103)
 
+[node name="TestPlatform2" parent="Platforms" unique_id=1804233179 instance=ExtResource("4_dxjw2")]
+position = Vector2(9, -48)
+
 [node name="next_level" parent="." unique_id=715973679 instance=ExtResource("5_87dkp")]
 position = Vector2(448, -148)
 next_level_scene = ExtResource("6_yuong")
@@ -71,5 +74,12 @@ texture = ExtResource("8_fdsja")
 [node name="soap_bubble" parent="." unique_id=657462297 instance=ExtResource("10_gvbwv")]
 position = Vector2(-420, -52)
 
-[node name="Bubbles-pipe" parent="." unique_id=1661824465 instance=ExtResource("11_b4eok")]
-position = Vector2(-97, -29)
+[node name="soap_bubbles_pipe" parent="." unique_id=1913815980 instance=ExtResource("11_b4eok")]
+position = Vector2(-114, 57)
+
+[node name="Label" type="Label" parent="." unique_id=614093170]
+offset_left = 483.0
+offset_top = -47.0
+offset_right = 556.0
+offset_bottom = -24.0
+text = "You see !!"
