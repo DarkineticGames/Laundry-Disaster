@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://dl2sjdhx0a7lq"]
+
+[ext_resource type="Script" uid="uid://dxyu08g4blb5p" path="res://scripts/health_manager.gd" id="1_6u5ai"]
+
+[node name="Health_Manager" type="Node" unique_id=130684418]
+script = ExtResource("1_6u5ai")
+
+[node name="Timer" type="Timer" parent="." unique_id=1071609429]
+wait_time = 0.5
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

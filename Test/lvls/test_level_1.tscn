@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://c5ytc3l4t5bu4"]
+
+[ext_resource type="PackedScene" uid="uid://dphngkp4iwbcr" path="res://scenes/level_num.tscn" id="1_fdsja"]
+[ext_resource type="Texture2D" uid="uid://c2u8rvcobqs31" path="res://icon.svg" id="1_fljj1"]
+[ext_resource type="PackedScene" uid="uid://c857to8qe1ica" path="res://scenes/characters/player.tscn" id="2_fcqv5"]
+[ext_resource type="PackedScene" uid="uid://dmaoyg5k3iw5x" path="res://scenes/platforms/bubble_platform.tscn" id="3_dxjw2"]
+[ext_resource type="PackedScene" uid="uid://dkek7ld0glmvt" path="res://Test/test_platform.tscn" id="4_dxjw2"]
+[ext_resource type="PackedScene" uid="uid://3t24tfqjsxei" path="res://scenes/next_level.tscn" id="5_87dkp"]
+[ext_resource type="PackedScene" uid="uid://dqfnjnc2ses31" path="res://Test/lvls/test_level_2.tscn" id="6_yuong"]
+[ext_resource type="PackedScene" uid="uid://m8ha44y4wjsq" path="res://scenes/UI/gui.tscn" id="7_vxtmc"]
+[ext_resource type="Texture2D" uid="uid://bi4nnfc0ckvs3" path="res://Test/assets/ruler_PNG82-249524369.png" id="8_fdsja"]
+[ext_resource type="PackedScene" uid="uid://b4udsnq4et8p8" path="res://scenes/hazards/soap_bubble.tscn" id="10_gvbwv"]
+[ext_resource type="PackedScene" uid="uid://b2jn0rqnanb8l" path="res://scenes/hazards/bubbles_pipe.tscn" id="11_b4eok"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_s7wsd"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_xgo4x"]
+distance = 5.0
+
+[node name="TestLevel_1" type="Node2D" unique_id=1865156233]
+
+[node name="Level-Num" parent="." unique_id=1727256295 instance=ExtResource("1_fdsja")]
+
+[node name="Basic ground" type="StaticBody2D" parent="." unique_id=474472950]
+physics_material_override = SubResource("PhysicsMaterial_s7wsd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Basic ground" unique_id=1796750294]
+position = Vector2(11, 23)
+shape = SubResource("WorldBoundaryShape2D_xgo4x")
+
+[node name="Sprite2D" type="Sprite2D" parent="Basic ground" unique_id=1618377015]
+position = Vector2(-2462.9995, 114)
+scale = Vector2(302.70313, 1.53125)
+texture = ExtResource("1_fljj1")
+
+[node name="Player" parent="." unique_id=582848631 instance=ExtResource("2_fcqv5")]
+position = Vector2(-3, -13)
+
+[node name="Platforms" type="Node" parent="." unique_id=2073016836]
+
+[node name="BubblePlatform" parent="Platforms" unique_id=869779138 instance=ExtResource("3_dxjw2")]
+position = Vector2(110, -45)
+
+[node name="BubblePlatform2" parent="Platforms" unique_id=1628167170 instance=ExtResource("3_dxjw2")]
+position = Vector2(167, -45)
+
+[node name="BubblePlatform3" parent="Platforms" unique_id=1778537280 instance=ExtResource("3_dxjw2")]
+position = Vector2(227, -47)
+
+[node name="BubblePlatform4" parent="Platforms" unique_id=651544150 instance=ExtResource("3_dxjw2")]
+position = Vector2(289, -67)
+
+[node name="BubblePlatform5" parent="Platforms" unique_id=877529306 instance=ExtResource("3_dxjw2")]
+position = Vector2(349, -92)
+
+[node name="TestPlatform" parent="Platforms" unique_id=1503127728 instance=ExtResource("4_dxjw2")]
+position = Vector2(442, -103)
+
+[node name="next_level" parent="." unique_id=715973679 instance=ExtResource("5_87dkp")]
+position = Vector2(448, -148)
+next_level_scene = ExtResource("6_yuong")
+
+[node name="GUI" parent="." unique_id=1727581627 instance=ExtResource("7_vxtmc")]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1432000247]
+visible = false
+position = Vector2(-516, 40)
+scale = Vector2(1, 0.56)
+texture = ExtResource("8_fdsja")
+
+[node name="soap_bubble" parent="." unique_id=657462297 instance=ExtResource("10_gvbwv")]
+position = Vector2(-420, -52)
+
+[node name="Bubbles-pipe" parent="." unique_id=1661824465 instance=ExtResource("11_b4eok")]
+position = Vector2(-97, -29)
