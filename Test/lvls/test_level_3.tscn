@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://bhvff0dftd3cv"]
+
+[ext_resource type="PackedScene" uid="uid://c857to8qe1ica" path="res://scenes/characters/player.tscn" id="1_5jbjb"]
+[ext_resource type="PackedScene" uid="uid://dkek7ld0glmvt" path="res://Test/test_platform.tscn" id="2_cvjt4"]
+[ext_resource type="PackedScene" uid="uid://3t24tfqjsxei" path="res://scenes/next_level.tscn" id="3_cvjt4"]
+[ext_resource type="PackedScene" uid="uid://b2w0h62gqiggq" path="res://scenes/kill_zone.tscn" id="4_7p6tg"]
+[ext_resource type="PackedScene" uid="uid://byrgk26f37kt7" path="res://Test/lvls/test_level_4.tscn" id="4_phwan"]
+[ext_resource type="PackedScene" uid="uid://m8ha44y4wjsq" path="res://scenes/UI/gui.tscn" id="5_sx5c6"]
+[ext_resource type="PackedScene" uid="uid://dphngkp4iwbcr" path="res://scenes/level_num.tscn" id="6_rolfi"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_6pl1w"]
+
+[node name="TestLevel_3" type="Node2D" unique_id=824084681]
+
+[node name="player" parent="." unique_id=582848631 instance=ExtResource("1_5jbjb")]
+position = Vector2(381, 198)
+
+[node name="TestPlatform" parent="." unique_id=1503127728 instance=ExtResource("2_cvjt4")]
+position = Vector2(390, 273)
+
+[node name="TestPlatform2" parent="." unique_id=1133403914 instance=ExtResource("2_cvjt4")]
+position = Vector2(517, 273)
+
+[node name="next_level" parent="." unique_id=715973679 instance=ExtResource("3_cvjt4")]
+position = Vector2(549, 228)
+next_level_scene = ExtResource("4_phwan")
+
+[node name="kill_zone" parent="next_level" unique_id=1933419617 instance=ExtResource("4_7p6tg")]
+position = Vector2(-94, 73)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="next_level/kill_zone" unique_id=2053692440]
+shape = SubResource("WorldBoundaryShape2D_6pl1w")
+
+[node name="GUI" parent="." unique_id=1727581627 instance=ExtResource("5_sx5c6")]
+
+[node name="Level-Num" parent="." unique_id=1727256295 instance=ExtResource("6_rolfi")]
+level_number = 3

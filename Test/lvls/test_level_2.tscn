@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://dqfnjnc2ses31"]
+
+[ext_resource type="PackedScene" uid="uid://c857to8qe1ica" path="res://scenes/characters/player.tscn" id="1_bdvs4"]
+[ext_resource type="PackedScene" uid="uid://3t24tfqjsxei" path="res://scenes/next_level.tscn" id="2_6hlhy"]
+[ext_resource type="PackedScene" uid="uid://dkek7ld0glmvt" path="res://Test/test_platform.tscn" id="3_lup80"]
+[ext_resource type="PackedScene" uid="uid://dmaoyg5k3iw5x" path="res://scenes/platforms/bubble_platform.tscn" id="4_aglal"]
+[ext_resource type="PackedScene" uid="uid://bhvff0dftd3cv" path="res://Test/lvls/test_level_3.tscn" id="5_8r62r"]
+[ext_resource type="PackedScene" uid="uid://b2w0h62gqiggq" path="res://scenes/kill_zone.tscn" id="6_6n4dh"]
+[ext_resource type="PackedScene" uid="uid://m8ha44y4wjsq" path="res://scenes/UI/gui.tscn" id="7_aglal"]
+[ext_resource type="PackedScene" uid="uid://dphngkp4iwbcr" path="res://scenes/level_num.tscn" id="8_q0jet"]
+[ext_resource type="PackedScene" uid="uid://b4udsnq4et8p8" path="res://scenes/hazards/soap_bubble.tscn" id="9_4rub8"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_6pl1w"]
+
+[node name="TestLevel_2" type="Node2D" unique_id=1989442951]
+
+[node name="GUI" parent="." unique_id=1727581627 instance=ExtResource("7_aglal")]
+
+[node name="player" parent="." unique_id=582848631 instance=ExtResource("1_bdvs4")]
+position = Vector2(303, 210)
+
+[node name="platforms" type="Node" parent="." unique_id=330854943]
+
+[node name="TestPlatform" parent="platforms" unique_id=1503127728 instance=ExtResource("3_lup80")]
+position = Vector2(302, 263)
+
+[node name="TestPlatform2" parent="platforms" unique_id=41966341 instance=ExtResource("3_lup80")]
+position = Vector2(656, 126)
+
+[node name="TestPlatform3" parent="platforms" unique_id=1432340806 instance=ExtResource("3_lup80")]
+position = Vector2(980, 294)
+
+[node name="BubblePlatform" parent="platforms" unique_id=869779138 instance=ExtResource("4_aglal")]
+position = Vector2(413, 225)
+
+[node name="BubblePlatform2" parent="platforms" unique_id=1586884025 instance=ExtResource("4_aglal")]
+position = Vector2(475, 189)
+
+[node name="BubblePlatform3" parent="platforms" unique_id=568734703 instance=ExtResource("4_aglal")]
+position = Vector2(538, 150)
+
+[node name="BubblePlatform4" parent="platforms" unique_id=1750539373 instance=ExtResource("4_aglal")]
+position = Vector2(764, 156)
+
+[node name="BubblePlatform5" parent="platforms" unique_id=439214874 instance=ExtResource("4_aglal")]
+position = Vector2(824, 197)
+
+[node name="BubblePlatform6" parent="platforms" unique_id=816710292 instance=ExtResource("4_aglal")]
+position = Vector2(871, 245)
+
+[node name="next_level" parent="." unique_id=715973679 instance=ExtResource("2_6hlhy")]
+position = Vector2(984, 249)
+next_level_scene = ExtResource("5_8r62r")
+
+[node name="kill_zone" parent="." unique_id=1933419617 instance=ExtResource("6_6n4dh")]
+position = Vector2(661, 335)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="kill_zone" unique_id=544838941]
+shape = SubResource("WorldBoundaryShape2D_6pl1w")
+
+[node name="Level-Num" parent="." unique_id=1727256295 instance=ExtResource("8_q0jet")]
+level_number = 2
+
+[node name="soap_bubble" parent="." unique_id=657462297 instance=ExtResource("9_4rub8")]
+position = Vector2(657, 84)
+scale = Vector2(0.18264459, 0.3265094)
