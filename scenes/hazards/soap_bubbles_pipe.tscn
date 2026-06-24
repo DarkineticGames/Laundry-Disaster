@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://dy3k5au2e5g1t"]
+
+[ext_resource type="Texture2D" uid="uid://bg28aly8o67b5" path="res://assets/hazards/pipe.png" id="1_at3ec"]
+[ext_resource type="Script" uid="uid://bhhbabhd0pben" path="res://scripts/soap_bubbles_pipe.gd" id="1_d8rld"]
+[ext_resource type="PackedScene" uid="uid://dvcb6yt8fsnef" path="res://scenes/hazards/damage_zone.tscn" id="2_d8rld"]
+[ext_resource type="Texture2D" uid="uid://l6jbrmhvk6ip" path="res://assets/hazards/bubble-med.png" id="4_bba0r"]
+[ext_resource type="Texture2D" uid="uid://ddgmv0yrudwir" path="res://assets/hazards/bubble-smol.png" id="5_rcn2q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6pl1w"]
+size = Vector2(25, 78)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jnqa7"]
+size = Vector2(31, 68)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_wak38"]
+load_path = "res://.godot/imported/bubble.png-05a09d217700a3dec09da0103162d12e.ctex"
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_bba0r"]
+particle_flag_disable_z = true
+particle_flag_inherit_emitter_scale = true
+emission_shape = 3
+emission_box_extents = Vector3(7, 1, 1)
+direction = Vector3(0, -1, 0)
+initial_velocity_min = 10.0
+initial_velocity_max = 10.0
+gravity = Vector3(0, -130, 0)
+
+[node name="soap_bubbles_pipe" type="Node2D" unique_id=1913815980]
+script = ExtResource("1_d8rld")
+active_time = 4.0
+cooldown_time = 2.5
+
+[node name="bubbles_Hurtbox" type="Sprite2D" parent="." unique_id=565027397]
+position = Vector2(21, -37)
+texture = ExtResource("1_at3ec")
+
+[node name="damage_zone" parent="bubbles_Hurtbox" unique_id=1236182295 instance=ExtResource("2_d8rld")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bubbles_Hurtbox/damage_zone" unique_id=1459123161]
+position = Vector2(-4.5, -68)
+shape = SubResource("RectangleShape2D_6pl1w")
+debug_color = Color(1, 0, 0, 0.5647059)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1761939703]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=112556683]
+position = Vector2(16.5, -34)
+shape = SubResource("RectangleShape2D_jnqa7")
+
+[node name="Bubbles" type="Node2D" parent="." unique_id=888565118]
+position = Vector2(21, -37)
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="Bubbles" unique_id=967947180]
+position = Vector2(-4, -32)
+amount = 4
+texture = SubResource("CompressedTexture2D_wak38")
+lifetime = 0.5
+speed_scale = 0.3
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_bba0r")
+
+[node name="GPUParticles2DMid" type="GPUParticles2D" parent="Bubbles" unique_id=2144903654]
+position = Vector2(-4, -32)
+amount = 7
+texture = ExtResource("4_bba0r")
+speed_scale = 0.75
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_bba0r")
+
+[node name="GPUParticles2DSmall" type="GPUParticles2D" parent="Bubbles" unique_id=1542967599]
+position = Vector2(-4, -32)
+amount = 15
+texture = ExtResource("5_rcn2q")
+speed_scale = 0.8
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_bba0r")
+
+[connection signal="body_entered" from="bubbles_Hurtbox/damage_zone" to="." method="_on_damage_zone_body_entered"]

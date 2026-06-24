@@ -194,19 +194,18 @@ animations = [{
 "speed": 8.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jnqa7"]
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6pl1w"]
 radius = 8.0
-height = 26.0
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jnqa7"]
-height = 24.0
+height = 28.0
 
 [sub_resource type="Animation" id="Animation_atpat"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:material:shader_parameter/enabled")
+tracks/0/path = NodePath("FlipPivot/AnimatedSprite2D:material:shader_parameter/enabled")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -218,11 +217,11 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_kqtwu"]
 resource_name = "hit"
-length = 0.19999999999999998
+length = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:material:shader_parameter/enabled")
+tracks/0/path = NodePath("FlipPivot/AnimatedSprite2D:material:shader_parameter/enabled")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -242,6 +241,25 @@ _data = {
 z_index = 1
 script = ExtResource("1_yewv4")
 
+[node name="FlipPivot" type="Node2D" parent="." unique_id=1857065757]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="FlipPivot" unique_id=919824398]
+material = SubResource("ShaderMaterial_hmhlj")
+position = Vector2(-2, -18)
+scale = Vector2(1.875, 2.0625)
+sprite_frames = SubResource("SpriteFrames_s7wsd")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="Hurtbox" type="Area2D" parent="FlipPivot" unique_id=457725591]
+collision_layer = 2
+collision_mask = 4
+
+[node name="HurtboxCollisionShape" type="CollisionShape2D" parent="FlipPivot/Hurtbox" unique_id=1858166345]
+position = Vector2(0, -1)
+shape = SubResource("CapsuleShape2D_jnqa7")
+debug_color = Color(0.8509804, 0, 0.09803922, 0.41960785)
+
 [node name="PlayerCam" type="Camera2D" parent="." unique_id=404427662]
 offset = Vector2(-45, 0)
 ignore_rotation = false
@@ -249,32 +267,13 @@ position_smoothing_speed = 10.0
 rotation_smoothing_speed = 10.0
 script = ExtResource("2_dyp2m")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=919824398]
-material = SubResource("ShaderMaterial_hmhlj")
-position = Vector2(1, -17)
-scale = Vector2(1.875, 2.0625)
-sprite_frames = SubResource("SpriteFrames_s7wsd")
-animation = &"die"
-autoplay = "idle"
-frame = 5
-frame_progress = 1.0
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=846158704]
-visible = false
-position = Vector2(2, -2)
+position = Vector2(0, -1)
 shape = SubResource("CapsuleShape2D_6pl1w")
-
-[node name="Hurtbox" type="Area2D" parent="." unique_id=457725591]
-collision_layer = 2
-collision_mask = 4
-
-[node name="HurtboxCollisionShape" type="CollisionShape2D" parent="Hurtbox" unique_id=1858166345]
-visible = false
-position = Vector2(2, -2)
-shape = SubResource("CapsuleShape2D_jnqa7")
-debug_color = Color(0.8509804, 0, 0.09803922, 0.41960785)
 
 [node name="HitAnimationPlayer" type="AnimationPlayer" parent="." unique_id=410363253]
 libraries/ = SubResource("AnimationLibrary_6eyoc")
 
-[connection signal="body_entered" from="Hurtbox" to="." method="_on_hurtbox_body_entered"]
+[node name="Timer" type="Timer" parent="." unique_id=1601056464]
+
+[connection signal="body_entered" from="FlipPivot/Hurtbox" to="." method="_on_hurtbox_body_entered"]
