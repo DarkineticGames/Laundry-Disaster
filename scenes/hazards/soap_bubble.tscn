@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://b4udsnq4et8p8"]
+
+[ext_resource type="Texture2D" uid="uid://c2u8rvcobqs31" path="res://icon.svg" id="1_1ywwd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6pl1w"]
+size = Vector2(114, 114)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jnqa7"]
+size = Vector2(128, 128)
+
+[node name="soap_bubble" type="StaticBody2D" unique_id=657462297 groups=["Damage"]]
+collision_layer = 5
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=490145972]
+texture = ExtResource("1_1ywwd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1055338481]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_6pl1w")
+
+[node name="Hurtbox" type="Area2D" parent="." unique_id=1411494085]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=100105549]
+shape = SubResource("RectangleShape2D_jnqa7")
+debug_color = Color(0.96862745, 0, 0, 0.41960785)

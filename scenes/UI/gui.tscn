@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://m8ha44y4wjsq"]
+
+[ext_resource type="Script" uid="uid://djaffodflvare" path="res://scripts/gui.gd" id="1_dk0i5"]
+[ext_resource type="Texture2D" uid="uid://c4x6ldkw784vx" path="res://assets/UI/gameplay_UI only no arrow, flood meter 80×360.png" id="2_3tbu2"]
+[ext_resource type="FontFile" uid="uid://bodhohqjn0qat" path="res://Test/assets/brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="2_dk0i5"]
+[ext_resource type="Texture2D" uid="uid://dyhu4ik8n1rfg" path="res://assets/UI/dirt-meter.png" id="3_fqfpr"]
+[ext_resource type="Texture2D" uid="uid://ddhl3xwepvwhx" path="res://assets/UI/knob.png" id="4_tk48h"]
+[ext_resource type="Texture2D" uid="uid://drs4q10d05wft" path="res://assets/UI/dirtmeter_arrow.png" id="5_tk48h"]
+
+[node name="GUI" type="CanvasLayer" unique_id=1727581627]
+script = ExtResource("1_dk0i5")
+
+[node name="control_panel" type="Sprite2D" parent="." unique_id=1370889042]
+position = Vector2(40, 180)
+texture = ExtResource("2_3tbu2")
+
+[node name="dirt_meter" type="Sprite2D" parent="control_panel" unique_id=497939971]
+texture_filter = 1
+position = Vector2(-18.750002, -113.75)
+scale = Vector2(1.1833334, 1.1375)
+texture = ExtResource("3_fqfpr")
+
+[node name="knop" type="Sprite2D" parent="control_panel" unique_id=927265103]
+position = Vector2(-2.000001, -15.499997)
+scale = Vector2(1.2444446, 1.1777778)
+texture = ExtResource("4_tk48h")
+
+[node name="DM-arrow" type="Sprite2D" parent="control_panel" unique_id=1579576548]
+position = Vector2(14, -155)
+texture = ExtResource("5_tk48h")
+
+[node name="Label" type="Label" parent="." unique_id=1707005277]
+offset_left = 7.0
+offset_top = 195.0
+offset_right = 69.0
+offset_bottom = 220.0
+theme_override_fonts/font = ExtResource("2_dk0i5")
+theme_override_font_sizes/font_size = 8
+text = "LVL 01"
+horizontal_alignment = 1
+vertical_alignment = 1
