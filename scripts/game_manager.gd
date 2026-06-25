@@ -1,6 +1,7 @@
 extends Node
 
 var is_dead := false
+var gravity_direction := 1
 
 @onready var break_sfx: AudioStreamPlayer2D = $BreakSFX
 
@@ -45,6 +46,8 @@ func player_die():
 	Engine.time_scale = 1
 
 	HealthManager.reset_health()
+
+	gravity_direction = 1
 
 	get_tree().reload_current_scene()
 

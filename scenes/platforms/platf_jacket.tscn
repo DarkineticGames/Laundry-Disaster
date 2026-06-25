@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://dt1i2hpbvlu8s"]
+
+[ext_resource type="Texture2D" uid="uid://dp73kh02g2p47" path="res://assets/platforms/jacket.png" id="1_cix5h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6pl1w"]
+size = Vector2(70, 26)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pn5r6"]
+height = 72.0
+
+[node name="Platf-jacket" type="StaticBody2D" unique_id=676350862]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2048836024]
+scale = Vector2(2, 2)
+texture = ExtResource("1_cix5h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1070619374]
+position = Vector2(2, 8)
+shape = SubResource("RectangleShape2D_6pl1w")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=852921043]
+position = Vector2(2, 25)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_pn5r6")

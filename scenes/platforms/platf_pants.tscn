@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bnmuhxlsrr82o"]
+
+[ext_resource type="Texture2D" uid="uid://be1gfw6la3a51" path="res://assets/platforms/pants.png" id="1_mx7dr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6pl1w"]
+size = Vector2(73, 20)
+
+[node name="Platf-pants" type="StaticBody2D" unique_id=676350862]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2048836024]
+position = Vector2(0, 10)
+scale = Vector2(2, 2)
+texture = ExtResource("1_mx7dr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1070619374]
+position = Vector2(-0.5, 8)
+shape = SubResource("RectangleShape2D_6pl1w")

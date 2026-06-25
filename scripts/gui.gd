@@ -1,9 +1,11 @@
 extends CanvasLayer
 
 
+@onready var animated_knob: AnimatedSprite2D = $"control_panel/Animated-knob"
 @onready var dm_arrow: Sprite2D = $"control_panel/DM-arrow"
-
 @onready var label: Label = $Label
+
+var rotation_cycle_timer := 0.0
 
 func _ready():
 
@@ -64,3 +66,15 @@ func update_dm_arrow():
 	)
 	if HealthManager.current_health == 0:
 		tween.finished.connect(GameManager.player_die)
+
+
+func _process(delta):
+
+	rotation_cycle_timer += delta
+
+	if rotation_cycle_timer >= 20.0:
+		rotation_cycle_timer -= 20.0
+
+	var frame_index = int(rotation_cycle_timer / 1.25)
+
+	animated_knob.frame = clamp(frame_index, 0, 15)

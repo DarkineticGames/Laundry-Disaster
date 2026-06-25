@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://ubltm6gopq5s"]
+
+[ext_resource type="Texture2D" uid="uid://d2xxnxnermap4" path="res://assets/platforms/shirt1.png" id="1_oa7un"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6pl1w"]
+size = Vector2(71, 24)
+
+[node name="Platf-shirt1" type="StaticBody2D" unique_id=676350862]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2048836024]
+position = Vector2(0, -4)
+scale = Vector2(2, 2)
+texture = ExtResource("1_oa7un")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1070619374]
+position = Vector2(-2, 8)
+shape = SubResource("RectangleShape2D_6pl1w")

@@ -63,4 +63,3 @@ level_number = 2
 
 [node name="soap_bubble" parent="." unique_id=657462297 instance=ExtResource("9_4rub8")]
 position = Vector2(657, 84)
-scale = Vector2(0.18264459, 0.3265094)

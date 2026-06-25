@@ -15,8 +15,9 @@ extends CharacterBody2D
 @export var gravity := 1300.0
 @export var coyote_time := 0.15
 @export var jump_buffer_time := 0.15
+@export var max_fall_speed := 900.0
 
-var gravity_direction := 1
+
 var controls_locked := false
 var shake_strength := 0.0
 var is_dead := false
@@ -51,7 +52,7 @@ func _physics_process(delta):
 
 	if controls_locked:
 		# Pre-empt the upcoming flip so is_on_floor() doesn't glitch mid-rotation
-		up_direction = Vector2.UP * -gravity_direction
+		up_direction = Vector2.UP * -GameManager.gravity_direction
 		move_and_slide()
 		return
 
@@ -62,11 +63,17 @@ func _physics_process(delta):
 
 	# Gravity
 	if not is_on_floor():
-		velocity.y += gravity * gravity_direction * delta
+		velocity.y += gravity * GameManager.gravity_direction * delta
+		
+		velocity.y = clamp(
+		velocity.y,
+		-max_fall_speed,
+		max_fall_speed
+	)
 
 	# Get the input direction: -1, 0, 1
 	var direction = Input.get_axis("walk_left", "walk_right")
-	if gravity_direction == -1:
+	if GameManager.gravity_direction == -1:
 		direction *= -1
 
 	# Flip the sprite - inverted when upside-down, since rotating a sprite
@@ -74,9 +81,9 @@ func _physics_process(delta):
 	# vertical one, so we have to swap which way "flip_h" points to compensate.
 	# No "direction == 0" case on purpose - flip_h keeps its last value while idle.
 	if direction > 0:
-		animation.flip_h = (gravity_direction == -1)
+		animation.flip_h = (GameManager.gravity_direction == -1)
 	elif direction < 0:
-		animation.flip_h = (gravity_direction != -1)
+		animation.flip_h = (GameManager.gravity_direction != -1)
 
 	# Play animation
 	if is_on_floor():
@@ -113,16 +120,16 @@ func _physics_process(delta):
 
 	# Jump
 	if jump_buffer_timer > 0 and coyote_timer > 0:
-		velocity.y = jump_velocity * gravity_direction
+		velocity.y = jump_velocity * GameManager.gravity_direction
 		jump_buffer_timer = 0
 		coyote_timer = 0
 
 	# Variable jump height
-	if Input.is_action_just_released("jump") and velocity.y * gravity_direction < 0:
+	if Input.is_action_just_released("jump") and velocity.y * GameManager.gravity_direction < 0:
 		velocity.y *= 0.5
 
 	# Tell Godot which way is "up" so is_on_floor() stays correct
-	up_direction = Vector2.UP * gravity_direction
+	up_direction = Vector2.UP * GameManager.gravity_direction
 
 	move_and_slide()
 
@@ -135,7 +142,7 @@ func flip_world():
 	tween.parallel().tween_property(flip_pivot, "rotation", flip_pivot.rotation + PI, 0.5)
 	await tween.finished
 
-	gravity_direction *= -1
+	GameManager.gravity_direction *= -1
 	body_collision.global_position = hurtbox.global_position
 	controls_locked = false
 
