@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://n36201c8bmnt"]
+
+[ext_resource type="Texture2D" uid="uid://c48gtpgtcs8e2" path="res://assets/platforms/jacket2.png" id="1_ejf33"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6pl1w"]
+size = Vector2(75, 20)
+
+[node name="Platf-jacket2" type="StaticBody2D" unique_id=676350862]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2048836024]
+scale = Vector2(2, 2)
+texture = ExtResource("1_ejf33")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1070619374]
+position = Vector2(-0.5, 8)
+shape = SubResource("RectangleShape2D_6pl1w")

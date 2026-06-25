@@ -8,4 +8,3 @@ script = ExtResource("1_hwd4i")
 
 [node name="BreakSFX" type="AudioStreamPlayer2D" parent="." unique_id=880451042]
 stream = ExtResource("2_glms7")
-bus = &"SFX"

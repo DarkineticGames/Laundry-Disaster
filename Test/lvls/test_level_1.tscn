@@ -72,7 +72,13 @@ scale = Vector2(1, 0.56)
 texture = ExtResource("8_fdsja")
 
 [node name="soap_bubble" parent="." unique_id=657462297 instance=ExtResource("10_gvbwv")]
-position = Vector2(-420, -52)
+position = Vector2(504, -62)
+
+[node name="soap_bubble2" parent="." unique_id=1862824858 instance=ExtResource("10_gvbwv")]
+position = Vector2(535, -47)
+
+[node name="soap_bubble3" parent="." unique_id=1524359330 instance=ExtResource("10_gvbwv")]
+position = Vector2(392, -54)
 
 [node name="soap_bubbles_pipe" parent="." unique_id=1913815980 instance=ExtResource("11_b4eok")]
 position = Vector2(-114, 57)

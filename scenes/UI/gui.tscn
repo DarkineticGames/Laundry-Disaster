@@ -4,8 +4,129 @@
 [ext_resource type="Texture2D" uid="uid://c4x6ldkw784vx" path="res://assets/UI/gameplay_UI only no arrow, flood meter 80×360.png" id="2_3tbu2"]
 [ext_resource type="FontFile" uid="uid://bodhohqjn0qat" path="res://Test/assets/brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="2_dk0i5"]
 [ext_resource type="Texture2D" uid="uid://dyhu4ik8n1rfg" path="res://assets/UI/dirt-meter.png" id="3_fqfpr"]
-[ext_resource type="Texture2D" uid="uid://ddhl3xwepvwhx" path="res://assets/UI/knob.png" id="4_tk48h"]
+[ext_resource type="Texture2D" uid="uid://u6audoiexa2v" path="res://assets/UI/knob_animated.png" id="5_hmhlj"]
 [ext_resource type="Texture2D" uid="uid://drs4q10d05wft" path="res://assets/UI/dirtmeter_arrow.png" id="5_tk48h"]
+[ext_resource type="Texture2D" uid="uid://bagwjmr2is4p7" path="res://assets/UI/display.png" id="6_lbamw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uyxc2"]
+atlas = ExtResource("5_hmhlj")
+region = Rect2(0, 0, 60, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gltfc"]
+atlas = ExtResource("5_hmhlj")
+region = Rect2(60, 0, 60, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e2j8c"]
+atlas = ExtResource("5_hmhlj")
+region = Rect2(120, 0, 60, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pl42k"]
+atlas = ExtResource("5_hmhlj")
+region = Rect2(180, 0, 60, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6gegp"]
+atlas = ExtResource("5_hmhlj")
+region = Rect2(0, 60, 60, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qy35d"]
+atlas = ExtResource("5_hmhlj")
+region = Rect2(60, 60, 60, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_33jgs"]
+atlas = ExtResource("5_hmhlj")
+region = Rect2(120, 60, 60, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_icrv3"]
+atlas = ExtResource("5_hmhlj")
+region = Rect2(180, 60, 60, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dvvkl"]
+atlas = ExtResource("5_hmhlj")
+region = Rect2(0, 120, 60, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7hioc"]
+atlas = ExtResource("5_hmhlj")
+region = Rect2(60, 120, 60, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sixab"]
+atlas = ExtResource("5_hmhlj")
+region = Rect2(120, 120, 60, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uyfc4"]
+atlas = ExtResource("5_hmhlj")
+region = Rect2(180, 120, 60, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d3euv"]
+atlas = ExtResource("5_hmhlj")
+region = Rect2(0, 180, 60, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gj6jd"]
+atlas = ExtResource("5_hmhlj")
+region = Rect2(60, 180, 60, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0fbdi"]
+atlas = ExtResource("5_hmhlj")
+region = Rect2(120, 180, 60, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vcc0w"]
+atlas = ExtResource("5_hmhlj")
+region = Rect2(180, 180, 60, 60)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6pl1w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uyxc2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gltfc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e2j8c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pl42k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6gegp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qy35d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_33jgs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_icrv3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dvvkl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7hioc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sixab")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uyfc4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d3euv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gj6jd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0fbdi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vcc0w")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 1.25
+}]
 
 [node name="GUI" type="CanvasLayer" unique_id=1727581627]
 script = ExtResource("1_dk0i5")
@@ -20,14 +141,19 @@ position = Vector2(-18.750002, -113.75)
 scale = Vector2(1.1833334, 1.1375)
 texture = ExtResource("3_fqfpr")
 
-[node name="knop" type="Sprite2D" parent="control_panel" unique_id=927265103]
-position = Vector2(-2.000001, -15.499997)
-scale = Vector2(1.2444446, 1.1777778)
-texture = ExtResource("4_tk48h")
-
 [node name="DM-arrow" type="Sprite2D" parent="control_panel" unique_id=1579576548]
 position = Vector2(14, -155)
 texture = ExtResource("5_tk48h")
+
+[node name="Animated-knob" type="AnimatedSprite2D" parent="control_panel" unique_id=1546482471]
+position = Vector2(-2.000001, -15.499997)
+scale = Vector2(1.2444446, 1.1777778)
+sprite_frames = SubResource("SpriteFrames_6pl1w")
+
+[node name="display" type="Sprite2D" parent="control_panel" unique_id=449803518]
+position = Vector2(-2, 29.499998)
+scale = Vector2(1.1714286, 1.1750004)
+texture = ExtResource("6_lbamw")
 
 [node name="Label" type="Label" parent="." unique_id=1707005277]
 offset_left = 7.0

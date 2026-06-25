@@ -1,7 +1,6 @@
 extends StaticBody2D
 
 @export var respawn_time: float = 3.0       # how long until it comes back
-@export var fade_duration: float = 0.4
 @export var sink_distance := 8.0
 @export var sink_duration := 0.15
 
@@ -34,8 +33,6 @@ func _pop() -> void:
 	area_2d.monitoring = false
 	
 	animated_sprite.play("pop")
-	#var tween := create_tween()
-	#tween.tween_property(self, "modulate:a", 0.0, fade_duration)
 
 	await get_tree().create_timer(respawn_time).timeout
 	_respawn()
@@ -48,16 +45,16 @@ func _respawn() -> void:
 	area_2d.monitoring = true
 	
 
-	#var tween := create_tween()
-	#tween.tween_property(self, "modulate:a", 1.0, fade_duration)
 
 func _sink():
+	var sink_direction = Vector2.DOWN * GameManager.gravity_direction
+
 	var tween := create_tween()
 
 	tween.tween_property(
 		self,
-		"position:y",
-		start_position.y + sink_distance,
+		"position",
+		start_position + sink_direction * sink_distance,
 		sink_duration
 	)
 
