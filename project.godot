@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="laundry disaster"
-run/main_scene="uid://cg8ds1q8qx1t6"
+run/main_scene="uid://di074ttyegh0v"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -30,7 +30,8 @@ PauseMenu="*uid://dwji52ar65itj"
 
 window/size/viewport_width=720
 window/size/viewport_height=360
-window/size/mode=3
+window/size/mode=4
+window/size/borderless=true
 window/stretch/mode="canvas_items"
 
 [global_group]
