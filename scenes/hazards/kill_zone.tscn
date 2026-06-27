@@ -1,13 +1,48 @@
 [gd_scene format=3 uid="uid://d2n45165g6s3l"]
 
 [ext_resource type="Script" uid="uid://b0elbtueawb0i" path="res://scripts/kill_zone.gd" id="1_kebdr"]
+[ext_resource type="Texture2D" uid="uid://27qljgqwiyqj" path="res://assets/hazards/8.png" id="2_xw6ba"]
+[ext_resource type="PackedScene" uid="uid://b58eyvp0yssak" path="res://scenes/hazards/GPU_bubbles.tscn" id="3_x44d2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bba0r"]
+size = Vector2(184, 38)
 
 [node name="kill_zone" type="Area2D" unique_id=1933419617]
+position = Vector2(300, 109)
 script = ExtResource("1_kebdr")
 
 [node name="Timer" type="Timer" parent="." unique_id=1818020738]
 wait_time = 0.6
 one_shot = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1997346097]
+position = Vector2(47.499985, 50)
+scale = Vector2(0.48177075, 0.5)
+texture = ExtResource("2_xw6ba")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=381319876]
+position = Vector2(47, 61)
+shape = SubResource("RectangleShape2D_bba0r")
+
+[node name="Bubbles_node" type="Node2D" parent="." unique_id=1217659457]
+
+[node name="Bubbles" parent="Bubbles_node" unique_id=1388361638 instance=ExtResource("3_x44d2")]
+position = Vector2(-26, 125)
+
+[node name="Bubbles2" parent="Bubbles_node" unique_id=461944682 instance=ExtResource("3_x44d2")]
+position = Vector2(2, 125)
+
+[node name="Bubbles3" parent="Bubbles_node" unique_id=1740101244 instance=ExtResource("3_x44d2")]
+position = Vector2(35, 125)
+
+[node name="Bubbles4" parent="Bubbles_node" unique_id=362591607 instance=ExtResource("3_x44d2")]
+position = Vector2(62, 125)
+
+[node name="Bubbles6" parent="Bubbles_node" unique_id=1821474320 instance=ExtResource("3_x44d2")]
+position = Vector2(95, 125)
+
+[node name="Bubbles7" parent="Bubbles_node" unique_id=1127909503 instance=ExtResource("3_x44d2")]
+position = Vector2(127, 125)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

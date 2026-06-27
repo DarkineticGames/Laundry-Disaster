@@ -1,10 +1,67 @@
 [gd_scene format=3 uid="uid://dwji52ar65itj"]
 
 [ext_resource type="Script" uid="uid://dfo0yttg5u6ib" path="res://scripts/pause_menu.gd" id="1_bl585"]
-[ext_resource type="FontFile" uid="uid://bodhohqjn0qat" path="res://Test/assets/brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="1_qo2fb"]
+[ext_resource type="Texture2D" uid="uid://baepjiwojxl88" path="res://assets/UI/buttons/green_button.png" id="2_3pfkw"]
+[ext_resource type="Texture2D" uid="uid://cwort8o7lhbqr" path="res://assets/UI/buttons/grn_button_click.png" id="3_xovtl"]
+[ext_resource type="Texture2D" uid="uid://3umgbl7i6txq" path="res://assets/UI/buttons/grn_button_hover.png" id="4_feba6"]
+[ext_resource type="FontFile" uid="uid://bodhohqjn0qat" path="res://Test/assets/brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="5_xovtl"]
+[ext_resource type="Texture2D" uid="uid://ce55q248bl6ua" path="res://assets/UI/buttons/big_red_button.png" id="6_xovtl"]
+[ext_resource type="Texture2D" uid="uid://ufpedcsoda6x" path="res://assets/UI/buttons/big_red_button_click.png" id="7_feba6"]
+[ext_resource type="Texture2D" uid="uid://bey7s2qlhaibl" path="res://assets/UI/buttons/big_red_button_hover.png" id="8_2uduj"]
+[ext_resource type="Texture2D" uid="uid://bagwjmr2is4p7" path="res://assets/UI/display.png" id="9_xovtl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6pl1w"]
+atlas = ExtResource("2_3pfkw")
+region = Rect2(21, 23, 86, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jnqa7"]
+atlas = ExtResource("3_xovtl")
+region = Rect2(21, 24, 86, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0xmu3"]
+atlas = ExtResource("4_feba6")
+region = Rect2(21, 24, 86, 21)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3pfkw"]
+load_path = "res://.godot/imported/restart.png-2fca5016efc1814054869c5c149e94f0.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s1vfr"]
+atlas = SubResource("CompressedTexture2D_3pfkw")
+region = Rect2(4, 22, 56, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ruuy7"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xovtl"]
+load_path = "res://.godot/imported/restart_hover.png-23272510c469524cbc15b270e3b471d8.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_myynj"]
+atlas = SubResource("CompressedTexture2D_xovtl")
+region = Rect2(4, 24, 56, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dymog"]
+atlas = ExtResource("6_xovtl")
+region = Rect2(21, 23, 86, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_expsl"]
+atlas = ExtResource("7_feba6")
+region = Rect2(21, 24, 86, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bj80e"]
+atlas = ExtResource("8_2uduj")
+region = Rect2(21, 24, 86, 21)
 
 [node name="CanvasLayer" type="CanvasLayer" unique_id=1774939200]
 script = ExtResource("1_bl585")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1702316718]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(80, 0)
+color = Color(0.56078434, 0.60784316, 0.69803923, 1)
 
 [node name="PauseMenu" type="Control" parent="." unique_id=1043058636]
 layout_mode = 3
@@ -16,15 +73,15 @@ grow_vertical = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="PauseMenu" unique_id=1069282893]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -53.0
-offset_top = -26.0
-offset_right = 53.0
-offset_bottom = 26.0
+anchors_preset = -1
+anchor_left = 0.41900003
+anchor_top = 0.38900003
+anchor_right = 0.74200004
+anchor_bottom = 0.83100003
+offset_left = 5.319977
+offset_top = 13.959991
+offset_right = -121.24005
+offset_bottom = -93.16
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(2.0025465, 1.9874598)
@@ -35,40 +92,87 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="Resume" type="Button" parent="PauseMenu/MarginContainer/VBoxContainer" unique_id=1186536828]
+[node name="Resume" type="TextureButton" parent="PauseMenu/MarginContainer/VBoxContainer" unique_id=857528494]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("1_qo2fb")
-toggle_mode = true
-action_mode = 0
-text = "Resume"
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = SubResource("AtlasTexture_6pl1w")
+texture_pressed = SubResource("AtlasTexture_jnqa7")
+texture_hover = SubResource("AtlasTexture_0xmu3")
 
-[node name="Restart" type="Button" parent="PauseMenu/MarginContainer/VBoxContainer" unique_id=299467523]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("1_qo2fb")
-toggle_mode = true
-action_mode = 0
-text = "Restart"
+[node name="Label" type="Label" parent="PauseMenu/MarginContainer/VBoxContainer/Resume" unique_id=1219752398]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.18
+anchor_top = 0.24000001
+anchor_right = 0.81900007
+anchor_bottom = 0.716
+offset_left = -0.012419701
+offset_top = -0.008449078
+offset_right = 0.033576965
+offset_bottom = -0.0044488907
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_xovtl")
+theme_override_font_sizes/font_size = 9
+text = "resume"
 
-[node name="Quit" type="Button" parent="PauseMenu/MarginContainer/VBoxContainer" unique_id=1303200533]
+[node name="Restart" type="TextureButton" parent="PauseMenu/MarginContainer/VBoxContainer" unique_id=1457062871]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("1_qo2fb")
-text = "Quit"
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = SubResource("AtlasTexture_s1vfr")
+texture_pressed = SubResource("AtlasTexture_ruuy7")
+texture_hover = SubResource("AtlasTexture_myynj")
+
+[node name="Main_Menu" type="TextureButton" parent="PauseMenu/MarginContainer/VBoxContainer" unique_id=2018249551]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = SubResource("AtlasTexture_dymog")
+texture_pressed = SubResource("AtlasTexture_expsl")
+texture_hover = SubResource("AtlasTexture_bj80e")
+
+[node name="Label" type="Label" parent="PauseMenu/MarginContainer/VBoxContainer/Main_Menu" unique_id=734405554]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.104
+anchor_top = 0.231
+anchor_right = 0.89400005
+anchor_bottom = 0.707
+offset_left = 11.707045
+offset_top = -0.000808239
+offset_right = -11.692963
+offset_bottom = 0.003191948
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_xovtl")
+theme_override_font_sizes/font_size = 8
+text = "main menu"
+
+[node name="Sprite2D" type="Sprite2D" parent="PauseMenu/MarginContainer" unique_id=1058074205]
+position = Vector2(56.927525, -30.18929)
+scale = Vector2(4.223194, 1.7610421)
+texture = ExtResource("9_xovtl")
 
 [node name="Label" type="Label" parent="PauseMenu" unique_id=967489230]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -174.0
-offset_top = -134.0
-offset_right = 296.0
-offset_bottom = -104.0
+anchors_preset = -1
+anchor_left = 0.25800002
+anchor_top = 0.128
+anchor_right = 0.9110001
+anchor_bottom = 0.21100001
+offset_left = 0.23999023
+offset_top = -0.08000183
+offset_right = 0.079956055
+offset_bottom = 0.039993286
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 0
-theme_override_fonts/font = ExtResource("1_qo2fb")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("5_xovtl")
 theme_override_font_sizes/font_size = 16
 text = "The spin cycle isn’t finished yet!"
 horizontal_alignment = 1
@@ -76,19 +180,20 @@ vertical_alignment = 1
 
 [node name="Label2" type="Label" parent="PauseMenu" unique_id=1303238586]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -254.0
-offset_top = -85.0
-offset_right = 376.0
-offset_bottom = -56.0
+anchors_preset = -1
+anchor_left = 0.42200002
+anchor_top = 0.23300001
+anchor_right = 0.74200004
+anchor_bottom = 0.314
+offset_left = 0.15997314
+offset_top = 0.11999512
+offset_right = -0.24005127
+offset_bottom = -0.040000916
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 0
-theme_override_fonts/font = ExtResource("1_qo2fb")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("5_xovtl")
 theme_override_font_sizes/font_size = 16
 text = "Stop it anyway?"
 horizontal_alignment = 1
@@ -96,5 +201,4 @@ vertical_alignment = 1
 
 [connection signal="pressed" from="PauseMenu/MarginContainer/VBoxContainer/Resume" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="PauseMenu/MarginContainer/VBoxContainer/Restart" to="." method="_on_restart_button_pressed"]
-[connection signal="pressed" from="PauseMenu/MarginContainer/VBoxContainer/Restart" to="." method="_on_resume_button_pressed"]
-[connection signal="pressed" from="PauseMenu/MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="PauseMenu/MarginContainer/VBoxContainer/Main_Menu" to="." method="_on_main_menu_pressed"]

@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://b58eyvp0yssak"]
+
+[ext_resource type="Texture2D" uid="uid://l6jbrmhvk6ip" path="res://assets/hazards/bubble-med.png" id="1_tibu6"]
+[ext_resource type="Texture2D" uid="uid://ddgmv0yrudwir" path="res://assets/hazards/bubble-smol.png" id="2_kgr75"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_wak38"]
+load_path = "res://.godot/imported/bubble.png-05a09d217700a3dec09da0103162d12e.ctex"
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_bba0r"]
+particle_flag_disable_z = true
+particle_flag_inherit_emitter_scale = true
+emission_shape = 3
+emission_box_extents = Vector3(7, 1, 1)
+direction = Vector3(0, -1, 0)
+initial_velocity_min = 10.0
+initial_velocity_max = 10.0
+gravity = Vector3(0, -130, 0)
+
+[node name="Bubbles" type="Node2D" unique_id=1388361638]
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=1885180500]
+position = Vector2(-4, -32)
+amount = 2
+texture = SubResource("CompressedTexture2D_wak38")
+lifetime = 0.5
+speed_scale = 0.3
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_bba0r")
+
+[node name="GPUParticles2DMid" type="GPUParticles2D" parent="." unique_id=1746019741]
+position = Vector2(-4, -32)
+amount = 3
+texture = ExtResource("1_tibu6")
+speed_scale = 0.75
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_bba0r")
+
+[node name="GPUParticles2DSmall" type="GPUParticles2D" parent="." unique_id=1179537457]
+position = Vector2(-4, -32)
+amount = 5
+texture = ExtResource("2_kgr75")
+speed_scale = 0.8
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_bba0r")

@@ -1,39 +1,43 @@
 [gd_scene format=3 uid="uid://3t24tfqjsxei"]
 
 [ext_resource type="Script" uid="uid://dag7nl4kxk4bl" path="res://scripts/next_level.gd" id="1_e8fy2"]
-[ext_resource type="Texture2D" uid="uid://bwd24ootmnmln" path="res://Test/assets/level_change_Portal.png" id="1_rf0ph"]
-[ext_resource type="Texture2D" uid="uid://b11x7spwburqt" path="res://Test/assets/back_nextlvl.png" id="3_e8fy2"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_sd4vo"]
-atlas = ExtResource("1_rf0ph")
-region = Rect2(0, 0, 32, 32)
+[ext_resource type="Texture2D" uid="uid://buljdipphmucw" path="res://assets/portal.png" id="2_sd4vo"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e8fy2"]
-atlas = ExtResource("1_rf0ph")
-region = Rect2(32, 0, 32, 32)
+atlas = ExtResource("2_sd4vo")
+region = Rect2(0, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wlp6t"]
-atlas = ExtResource("1_rf0ph")
-region = Rect2(64, 0, 32, 32)
+atlas = ExtResource("2_sd4vo")
+region = Rect2(128, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_il65w"]
-atlas = ExtResource("1_rf0ph")
-region = Rect2(0, 32, 32, 32)
+atlas = ExtResource("2_sd4vo")
+region = Rect2(256, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jymac"]
-atlas = ExtResource("1_rf0ph")
-region = Rect2(32, 32, 32, 32)
+atlas = ExtResource("2_sd4vo")
+region = Rect2(384, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nlao2"]
-atlas = ExtResource("1_rf0ph")
-region = Rect2(64, 32, 32, 32)
+atlas = ExtResource("2_sd4vo")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o3ii7"]
+atlas = ExtResource("2_sd4vo")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8rh8h"]
+atlas = ExtResource("2_sd4vo")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_twfgh"]
+atlas = ExtResource("2_sd4vo")
+region = Rect2(896, 0, 128, 128)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6pl1w"]
 animations = [{
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_sd4vo")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_e8fy2")
 }, {
@@ -48,41 +52,36 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_nlao2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o3ii7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8rh8h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_twfgh")
 }],
 "loop": 1,
 "name": &"default",
 "speed": 10.0
 }]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_wlp6t"]
-load_path = "res://.godot/imported/front_nextlvl.png-79373562a35736662856c325513a9fae.ctex"
-
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jnqa7"]
-radius = 9.0
-height = 38.0
+radius = 13.0
+height = 40.0
 
 [node name="next_level" type="Area2D" unique_id=715973679]
 script = ExtResource("1_e8fy2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=52222448]
-visible = false
+position = Vector2(-2, -19)
 sprite_frames = SubResource("SpriteFrames_6pl1w")
 autoplay = "default"
-frame_progress = 0.16406144
-
-[node name="BackNextlvl" type="Sprite2D" parent="." unique_id=1854801297]
-position = Vector2(-7, -17)
-scale = Vector2(0.19776952, 0.18951389)
-texture = ExtResource("3_e8fy2")
-
-[node name="FrontNextlvl" type="Sprite2D" parent="." unique_id=1420935740]
-z_index = 2
-position = Vector2(-1, -17)
-scale = Vector2(0.15193681, 0.19250882)
-texture = SubResource("CompressedTexture2D_wlp6t")
+frame_progress = 0.7047506
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1392783735]
-position = Vector2(4, 0)
+position = Vector2(3, 1)
 shape = SubResource("CapsuleShape2D_jnqa7")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

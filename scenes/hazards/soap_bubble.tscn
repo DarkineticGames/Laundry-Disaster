@@ -95,10 +95,11 @@ animations = [{
 }],
 "loop": 0,
 "name": &"respawn",
-"speed": 10.0
+"speed": 17.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bba0r"]
+radius = 9.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rcn2q"]
 radius = 11.0
@@ -112,6 +113,7 @@ script = ExtResource("1_78epd")
 position = Vector2(0, 1)
 scale = Vector2(1.25, 1.25)
 sprite_frames = SubResource("SpriteFrames_6pl1w")
+animation = &"respawn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1055338481]
 shape = SubResource("CircleShape2D_bba0r")
@@ -123,5 +125,7 @@ shape = SubResource("CircleShape2D_rcn2q")
 debug_color = Color(0.96862745, 0, 0, 0.41960785)
 
 [node name="Timer" type="Timer" parent="." unique_id=2049910098]
+wait_time = 0.1
 
 [connection signal="body_entered" from="Hurtbox" to="." method="_on_hurtbox_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

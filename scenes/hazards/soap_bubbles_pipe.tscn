@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dvcb6yt8fsnef" path="res://scenes/hazards/damage_zone.tscn" id="2_d8rld"]
 [ext_resource type="Texture2D" uid="uid://l6jbrmhvk6ip" path="res://assets/hazards/bubble-med.png" id="4_bba0r"]
 [ext_resource type="Texture2D" uid="uid://ddgmv0yrudwir" path="res://assets/hazards/bubble-smol.png" id="5_rcn2q"]
+[ext_resource type="Texture2D" uid="uid://ct2owmwgloes2" path="res://assets/hazards/pipe-valve-closed.png" id="6_rcn2q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6pl1w"]
 size = Vector2(25, 78)
@@ -47,10 +48,10 @@ debug_color = Color(1, 0, 0, 0.5647059)
 position = Vector2(16.5, -34)
 shape = SubResource("RectangleShape2D_jnqa7")
 
-[node name="Bubbles" type="Node2D" parent="." unique_id=888565118]
+[node name="Bubbles" type="Node2D" parent="." unique_id=1388361638]
 position = Vector2(21, -37)
 
-[node name="GPUParticles2D" type="GPUParticles2D" parent="Bubbles" unique_id=967947180]
+[node name="GPUParticles2D" type="GPUParticles2D" parent="Bubbles" unique_id=1885180500]
 position = Vector2(-4, -32)
 amount = 4
 texture = SubResource("CompressedTexture2D_wak38")
@@ -59,7 +60,7 @@ speed_scale = 0.3
 local_coords = true
 process_material = SubResource("ParticleProcessMaterial_bba0r")
 
-[node name="GPUParticles2DMid" type="GPUParticles2D" parent="Bubbles" unique_id=2144903654]
+[node name="GPUParticles2DMid" type="GPUParticles2D" parent="Bubbles" unique_id=1746019741]
 position = Vector2(-4, -32)
 amount = 7
 texture = ExtResource("4_bba0r")
@@ -67,12 +68,16 @@ speed_scale = 0.75
 local_coords = true
 process_material = SubResource("ParticleProcessMaterial_bba0r")
 
-[node name="GPUParticles2DSmall" type="GPUParticles2D" parent="Bubbles" unique_id=1542967599]
+[node name="GPUParticles2DSmall" type="GPUParticles2D" parent="Bubbles" unique_id=1179537457]
 position = Vector2(-4, -32)
 amount = 15
 texture = ExtResource("5_rcn2q")
 speed_scale = 0.8
 local_coords = true
 process_material = SubResource("ParticleProcessMaterial_bba0r")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1506734127]
+position = Vector2(33, -43)
+texture = ExtResource("6_rcn2q")
 
 [connection signal="body_entered" from="bubbles_Hurtbox/damage_zone" to="." method="_on_damage_zone_body_entered"]

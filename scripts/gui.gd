@@ -5,7 +5,9 @@ extends CanvasLayer
 @onready var dm_arrow: Sprite2D = $"control_panel/DM-arrow"
 @onready var label: Label = $Label
 
+@export var rotation_speed = 1.25   # The lower the number the highier tha speed
 var rotation_cycle_timer := 0.0
+var cycle_duration = 16 * rotation_speed
 
 func _ready():
 
@@ -71,10 +73,12 @@ func update_dm_arrow():
 func _process(delta):
 
 	rotation_cycle_timer += delta
+	
 
-	if rotation_cycle_timer >= 20.0:
-		rotation_cycle_timer -= 20.0
 
-	var frame_index = int(rotation_cycle_timer / 1.25)
+	if rotation_cycle_timer >= cycle_duration:
+		rotation_cycle_timer -= cycle_duration
+
+	var frame_index = int(rotation_cycle_timer / rotation_speed)
 
 	animated_knob.frame = clamp(frame_index, 0, 15)

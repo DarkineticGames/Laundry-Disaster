@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://c8x6dkj6dge7w"]
+
+[ext_resource type="Script" uid="uid://c4rkh5ntfxkc" path="res://scripts/player_cam.gd" id="1_2yvj5"]
+
+[node name="PlayerCam" type="Camera2D" unique_id=2140256749]
+offset = Vector2(-45, 0)
+ignore_rotation = false
+position_smoothing_speed = 10.0
+rotation_smoothing_speed = 10.0
+script = ExtResource("1_2yvj5")

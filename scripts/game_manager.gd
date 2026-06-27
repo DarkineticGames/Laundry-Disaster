@@ -1,6 +1,7 @@
 extends Node
 
 var is_dead := false
+var is_gameplay_active := false 
 var gravity_direction := 1
 
 @onready var break_sfx: AudioStreamPlayer2D = $BreakSFX
@@ -11,16 +12,14 @@ func _ready() -> void:
 
 func _process(delta: float):
 	if Input.is_action_just_pressed("pause"):
-		toggle_pause()
+		if is_gameplay_active and not is_dead:
+			toggle_pause()
+
 
 func toggle_pause() -> void:
 	get_tree().paused = not get_tree().paused
 	PauseMenu.visible = get_tree().paused
 
-
-func pauseMenu():
-	if pauseMenu().paused:
-		PauseMenu.hide()
 
 func player_die():
 
@@ -33,9 +32,11 @@ func player_die():
 
 	if player:
 		player.die()
-
+		gravity_direction = 1
+		player.animation.play("die")
+	gravity_direction = 1
 	#break_sfx.play()
-	player.animation.play("die")
+	
 
 	await get_tree().create_timer(0.6).timeout
 
@@ -47,8 +48,8 @@ func player_die():
 
 	HealthManager.reset_health()
 
-	gravity_direction = 1
+	
 
-	get_tree().reload_current_scene()
+	await LoadingScreen.play_loading()
 
 	is_dead = false

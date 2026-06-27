@@ -11,9 +11,8 @@ config_version=5
 [application]
 
 config/name="laundry disaster"
-run/main_scene="uid://cg8ds1q8qx1t6"
+run/main_scene="uid://cyp8pj7qxcnu4"
 config/features=PackedStringArray("4.7", "GL Compatibility")
-config/icon="res://icon.svg"
 
 [audio]
 
@@ -22,9 +21,12 @@ buses/default_bus_layout=""
 [autoload]
 
 GameManager="*uid://2jb1ryt33dun"
-LevelManager="*uid://dql2m1xx8xomn"
 HealthManager="*uid://dl2sjdhx0a7lq"
+LevelManager="*uid://dql2m1xx8xomn"
 PauseMenu="*uid://dwji52ar65itj"
+LoadingScreen="*uid://d1c4onjmhgm1q"
+TransitionScreen="*uid://bx14qnmp3fn1j"
+Background="*uid://dolflipwyrvx4"
 
 [display]
 

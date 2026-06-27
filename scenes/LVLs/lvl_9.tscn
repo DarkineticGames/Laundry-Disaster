@@ -1,0 +1,205 @@
+[gd_scene format=3 uid="uid://clv7cncpwwota"]
+
+[ext_resource type="PackedScene" uid="uid://m8ha44y4wjsq" path="res://scenes/UI/gui.tscn" id="1_0yl4v"]
+[ext_resource type="PackedScene" uid="uid://dphngkp4iwbcr" path="res://scenes/level_num.tscn" id="2_5nv1m"]
+[ext_resource type="PackedScene" uid="uid://c857to8qe1ica" path="res://scenes/characters/player.tscn" id="3_jqagc"]
+[ext_resource type="PackedScene" uid="uid://3t24tfqjsxei" path="res://scenes/next_level.tscn" id="4_v107j"]
+[ext_resource type="PackedScene" uid="uid://cyeri2gqr80r0" path="res://scenes/LVLs/lvl_10.tscn" id="5_pctd2"]
+[ext_resource type="PackedScene" uid="uid://dt1i2hpbvlu8s" path="res://scenes/platforms/platf_jacket.tscn" id="6_v107j"]
+[ext_resource type="PackedScene" uid="uid://n36201c8bmnt" path="res://scenes/platforms/platf_jacket2.tscn" id="7_pctd2"]
+[ext_resource type="PackedScene" uid="uid://8jiukvc1tb5f" path="res://scenes/floors/floor_cube.tscn" id="8_7fejk"]
+[ext_resource type="PackedScene" uid="uid://d2dp4reaygyer" path="res://scenes/floors/floor_2.tscn" id="9_4o0lj"]
+[ext_resource type="PackedScene" uid="uid://d2n45165g6s3l" path="res://scenes/hazards/kill_zone.tscn" id="10_215jp"]
+[ext_resource type="PackedScene" uid="uid://d17wyrkxxlgym" path="res://scenes/platforms/platf_pants2.tscn" id="10_os0hr"]
+[ext_resource type="PackedScene" uid="uid://dmaoyg5k3iw5x" path="res://scenes/platforms/bubble_platform.tscn" id="11_hio3c"]
+[ext_resource type="PackedScene" uid="uid://8y16mbssgthp" path="res://scenes/platforms/platf_shirt2.tscn" id="11_xiu3v"]
+[ext_resource type="PackedScene" uid="uid://bnmuhxlsrr82o" path="res://scenes/platforms/platf_pants.tscn" id="12_ql5yh"]
+[ext_resource type="PackedScene" uid="uid://ubltm6gopq5s" path="res://scenes/platforms/platf_shirt1.tscn" id="13_mebeo"]
+[ext_resource type="PackedScene" uid="uid://ck3rguuq361fm" path="res://scenes/floors/floor_4.tscn" id="14_7fejk"]
+[ext_resource type="PackedScene" uid="uid://b4udsnq4et8p8" path="res://scenes/hazards/soap_bubble.tscn" id="14_u701q"]
+[ext_resource type="PackedScene" uid="uid://dy3k5au2e5g1t" path="res://scenes/hazards/soap_bubbles_pipe.tscn" id="15_ecv8r"]
+[ext_resource type="PackedScene" uid="uid://cme2wyn3lqk2i" path="res://scenes/hazards/red_bubbles_pipe.tscn" id="18_4o0lj"]
+
+[node name="LVL_9" type="Node2D" unique_id=571022587]
+
+[node name="GUI" parent="." unique_id=1727581627 instance=ExtResource("1_0yl4v")]
+visible = false
+
+[node name="Level-Num" parent="." unique_id=1727256295 instance=ExtResource("2_5nv1m")]
+level_number = 9
+
+[node name="player" parent="." unique_id=582848631 instance=ExtResource("3_jqagc")]
+position = Vector2(35, 239)
+
+[node name="next_level" parent="." unique_id=715973679 instance=ExtResource("4_v107j")]
+position = Vector2(897, 277)
+next_level_scene = ExtResource("5_pctd2")
+
+[node name="platforms" type="Node2D" parent="." unique_id=380378985]
+
+[node name="Platf-shirt1" parent="platforms" unique_id=240898613 instance=ExtResource("13_mebeo")]
+position = Vector2(387, 226)
+
+[node name="Platf-jacket" parent="platforms" unique_id=676350862 instance=ExtResource("6_v107j")]
+position = Vector2(34, 180)
+scale = Vector2(0.75, 0.75)
+
+[node name="Platf-jacket2" parent="platforms" unique_id=1070690933 instance=ExtResource("7_pctd2")]
+position = Vector2(168, 286)
+
+[node name="Platf-jacket5" parent="platforms" unique_id=1048077994 instance=ExtResource("7_pctd2")]
+position = Vector2(592, 221)
+
+[node name="Platf-jacket3" parent="platforms" unique_id=552584910 instance=ExtResource("7_pctd2")]
+position = Vector2(598, 324)
+
+[node name="Platf-jacket4" parent="platforms" unique_id=547053038 instance=ExtResource("7_pctd2")]
+position = Vector2(499, 140)
+rotation = 3.1415927
+
+[node name="Platf-pants" parent="platforms" unique_id=25369622 instance=ExtResource("12_ql5yh")]
+position = Vector2(164, 168)
+
+[node name="BubblePlatform2" parent="platforms" unique_id=478677348 instance=ExtResource("11_hio3c")]
+position = Vector2(236, 178)
+rotation = 3.1415927
+
+[node name="BubblePlatform3" parent="platforms" unique_id=352489035 instance=ExtResource("11_hio3c")]
+position = Vector2(305, 178)
+rotation = 3.1415927
+
+[node name="BubblePlatform4" parent="platforms" unique_id=869779138 instance=ExtResource("11_hio3c")]
+position = Vector2(495, 232)
+rotation = 3.1415927
+
+[node name="Platf-pants2" parent="platforms" unique_id=2012530869 instance=ExtResource("10_os0hr")]
+position = Vector2(387, 305)
+
+[node name="Platf-pants3" parent="platforms" unique_id=1344408671 instance=ExtResource("10_os0hr")]
+position = Vector2(387, 118)
+
+[node name="Platf-shirt2" parent="platforms" unique_id=1424633784 instance=ExtResource("11_xiu3v")]
+position = Vector2(502, 325)
+
+[node name="Platf-shirt3" parent="platforms" unique_id=1891227484 instance=ExtResource("11_xiu3v")]
+position = Vector2(687, 123)
+
+[node name="Platf-pants4" parent="platforms" unique_id=731675778 instance=ExtResource("12_ql5yh")]
+position = Vector2(795, 135)
+
+[node name="floors" type="Node2D" parent="." unique_id=1321388149]
+
+[node name="floor_cube" parent="floors" unique_id=1518292012 instance=ExtResource("8_7fejk")]
+position = Vector2(46, 310)
+scale = Vector2(1.5, 1.5)
+
+[node name="floor_cube2" parent="floors" unique_id=308939681 instance=ExtResource("8_7fejk")]
+position = Vector2(967, 319)
+rotation = 1.5707964
+scale = Vector2(1.5, 1.5)
+
+[node name="floor_2" parent="floors" unique_id=1121320848 instance=ExtResource("9_4o0lj")]
+position = Vector2(820, 315)
+rotation = 3.1415927
+
+[node name="floor_4" parent="floors" unique_id=1694636717 instance=ExtResource("14_7fejk")]
+position = Vector2(-26, 321)
+rotation = 1.5707964
+
+[node name="floor_5" parent="floors" unique_id=1150773445 instance=ExtResource("14_7fejk")]
+position = Vector2(967, 217)
+rotation = 1.5707964
+
+[node name="floor_3" parent="floors" unique_id=446933745 instance=ExtResource("9_4o0lj")]
+position = Vector2(-23, 164)
+rotation = 1.5707964
+
+[node name="floor_6" parent="floors" unique_id=1711615294 instance=ExtResource("9_4o0lj")]
+position = Vector2(-23, 164)
+rotation = 1.5707964
+
+[node name="hazards" type="Node2D" parent="." unique_id=1326491385]
+
+[node name="soap_bubble" parent="hazards" unique_id=657462297 instance=ExtResource("14_u701q")]
+position = Vector2(241, 287)
+
+[node name="soap_bubble2" parent="hazards" unique_id=1463774385 instance=ExtResource("14_u701q")]
+position = Vector2(301, 287)
+
+[node name="kill_zones_down" type="Node2D" parent="." unique_id=514721646]
+
+[node name="kill_zone" parent="kill_zones_down" unique_id=1933419617 instance=ExtResource("10_215jp")]
+position = Vector2(38, 339)
+
+[node name="kill_zone4" parent="kill_zones_down" unique_id=1941480660 instance=ExtResource("10_215jp")]
+position = Vector2(898, 339)
+
+[node name="kill_zone2" parent="kill_zones_down" unique_id=1402212314 instance=ExtResource("10_215jp")]
+position = Vector2(223, 339)
+
+[node name="kill_zone5" parent="kill_zones_down" unique_id=1297756833 instance=ExtResource("10_215jp")]
+position = Vector2(585, 339)
+
+[node name="kill_zone6" parent="kill_zones_down" unique_id=233936181 instance=ExtResource("10_215jp")]
+position = Vector2(736, 339)
+
+[node name="kill_zone3" parent="kill_zones_down" unique_id=1778596213 instance=ExtResource("10_215jp")]
+position = Vector2(407, 339)
+
+[node name="kill_zones_up" type="Node2D" parent="." unique_id=20994073]
+position = Vector2(31, 0)
+
+[node name="kill_zone" parent="kill_zones_up" unique_id=1069716028 instance=ExtResource("10_215jp")]
+position = Vector2(89, 136)
+rotation = 3.1415927
+
+[node name="kill_zone4" parent="kill_zones_up" unique_id=740501066 instance=ExtResource("10_215jp")]
+position = Vector2(950, 136)
+rotation = 3.1415927
+
+[node name="kill_zone2" parent="kill_zones_up" unique_id=1848799368 instance=ExtResource("10_215jp")]
+position = Vector2(274, 136)
+rotation = 3.1415927
+
+[node name="kill_zone5" parent="kill_zones_up" unique_id=1173339457 instance=ExtResource("10_215jp")]
+position = Vector2(415, 136)
+rotation = 3.1415927
+
+[node name="kill_zone6" parent="kill_zones_up" unique_id=468677134 instance=ExtResource("10_215jp")]
+position = Vector2(600, 136)
+rotation = 3.1415927
+
+[node name="kill_zone3" parent="kill_zones_up" unique_id=905817861 instance=ExtResource("10_215jp")]
+position = Vector2(765, 136)
+rotation = 3.1415927
+
+[node name="pipes" type="Node2D" parent="." unique_id=520981364]
+
+[node name="soap_bubbles_pipe" parent="pipes" unique_id=1913815980 instance=ExtResource("15_ecv8r")]
+position = Vector2(431, 386)
+
+[node name="soap_bubbles_pipe2" parent="pipes" unique_id=1256343145 instance=ExtResource("15_ecv8r")]
+position = Vector2(463, 79)
+rotation = 3.1415927
+
+[node name="soap_bubbles_pipe3" parent="pipes" unique_id=741971203 instance=ExtResource("15_ecv8r")]
+position = Vector2(529, 386)
+active_time = 3.5
+cooldown_time = 2.3
+
+[node name="soap_bubbles_pipe4" parent="pipes" unique_id=613521737 instance=ExtResource("15_ecv8r")]
+position = Vector2(561, 79)
+rotation = 3.1415927
+active_time = 3.5
+cooldown_time = 2.3
+
+[node name="soap_bubbles_pipe5" parent="pipes" unique_id=2007482143 instance=ExtResource("15_ecv8r")]
+position = Vector2(619, 386)
+
+[node name="soap_bubbles_pipe6" parent="pipes" unique_id=1681721938 instance=ExtResource("15_ecv8r")]
+position = Vector2(651, 79)
+rotation = 3.1415927
+
+[node name="red_bubbles_pipe" parent="pipes" unique_id=943226943 instance=ExtResource("18_4o0lj")]
+position = Vector2(604, 77)
+rotation = 3.1415927

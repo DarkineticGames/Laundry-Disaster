@@ -5,8 +5,8 @@ extends CharacterBody2D
 @onready var animation = $FlipPivot/AnimatedSprite2D
 @onready var hurtbox = $FlipPivot/Hurtbox
 @onready var body_collision = $CollisionShape2D
-@onready var camera = $PlayerCam   # was $Camera2D in your friend's scene
-@onready var flip_timer = $Timer   # NEW NODE - add a Timer as a child of player
+@onready var camera : Camera2D = $PlayerCam
+@onready var flip_timer = $Timer  
 
 @export var speed := 200.0
 @export var acceleration := 2000.0
@@ -16,11 +16,17 @@ extends CharacterBody2D
 @export var coyote_time := 0.15
 @export var jump_buffer_time := 0.15
 @export var max_fall_speed := 900.0
+@export var knockback_strength := 350.0
+@export var knockback_vertical := -150.0
+@export var freeze_duration := 0.1
+@export var freeze_time_scale := 0.05
 
 
 var controls_locked := false
+var is_transitioning := false
 var shake_strength := 0.0
 var is_dead := false
+var is_freezing := false
 var coyote_timer := 0.0
 var jump_buffer_timer := 0.0
 
@@ -34,7 +40,21 @@ func _ready() -> void:
 	flip_timer.timeout.connect(flip_world)
 
 func _on_damaged() -> void:
+	if is_dead:
+		return
 	hit_animation_player.play("hit")
+	_freeze_frame()
+
+func _freeze_frame() -> void:
+	if is_freezing:
+		return
+	is_freezing = true
+	Engine.time_scale = freeze_time_scale
+	# ignore_time_scale=true so this wait is always real-world 0.1s,
+	# regardless of the slowdown we just applied
+	await get_tree().create_timer(freeze_duration, true, false, true).timeout
+	Engine.time_scale = 1.0
+	is_freezing = false
 
 func _physics_process(delta):
 	if is_dead:
@@ -142,14 +162,30 @@ func flip_world():
 	tween.parallel().tween_property(flip_pivot, "rotation", flip_pivot.rotation + PI, 0.5)
 	await tween.finished
 
+	if is_transitioning or is_dead:
+		return  # already leaving this level - don't touch global gravity state on the way out
+
 	GameManager.gravity_direction *= -1
 	body_collision.global_position = hurtbox.global_position
 	controls_locked = false
 
 func _on_hurtbox_body_entered(body: Node2D) -> void:
+	if is_dead:
+		return
 	if body.is_in_group("Damage"):
 		HealthManager.decrease_health(body.health_amount)
+		_apply_knockback(body)
+
+func _apply_knockback(source: Node2D) -> void:
+	var push_dir: float = sign(global_position.x - source.global_position.x)
+	if push_dir == 0:
+		push_dir = 1  # straight-down hits still get pushed somewhere, not stuck
+	velocity.x = push_dir * knockback_strength
+	velocity.y = knockback_vertical * GameManager.gravity_direction
 
 func die():
 	is_dead = true
+	flip_timer.stop()
+	animation.play("die")
 	$CollisionShape2D.set_deferred("disabled", true)
+	GameManager.gravity_direction = 1

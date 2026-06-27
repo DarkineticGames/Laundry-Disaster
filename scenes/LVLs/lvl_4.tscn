@@ -1,0 +1,87 @@
+[gd_scene format=3 uid="uid://ikkcfbsr3mf4"]
+
+[ext_resource type="PackedScene" uid="uid://m8ha44y4wjsq" path="res://scenes/UI/gui.tscn" id="1_7p4mo"]
+[ext_resource type="PackedScene" uid="uid://dphngkp4iwbcr" path="res://scenes/level_num.tscn" id="2_p3i0m"]
+[ext_resource type="PackedScene" uid="uid://c857to8qe1ica" path="res://scenes/characters/player.tscn" id="3_ws1vl"]
+[ext_resource type="PackedScene" uid="uid://3t24tfqjsxei" path="res://scenes/next_level.tscn" id="4_5n276"]
+[ext_resource type="PackedScene" uid="uid://dc37tkmcu3ayb" path="res://scenes/floors/floor_1.tscn" id="5_36we3"]
+[ext_resource type="PackedScene" uid="uid://tuieumj20odh" path="res://scenes/LVLs/lvl_5.tscn" id="5_ws1vl"]
+[ext_resource type="PackedScene" uid="uid://d2dp4reaygyer" path="res://scenes/floors/floor_2.tscn" id="6_trk71"]
+[ext_resource type="PackedScene" uid="uid://bnucscfu21m3y" path="res://scenes/floors/floor_3.tscn" id="7_2885o"]
+[ext_resource type="PackedScene" uid="uid://ck3rguuq361fm" path="res://scenes/floors/floor_4.tscn" id="8_4b320"]
+[ext_resource type="PackedScene" uid="uid://b4tgetybcs4ka" path="res://scenes/floors/floor_5.tscn" id="9_asaf2"]
+[ext_resource type="PackedScene" uid="uid://dy3k5au2e5g1t" path="res://scenes/hazards/soap_bubbles_pipe.tscn" id="10_vd1e2"]
+[ext_resource type="PackedScene" uid="uid://dmaoyg5k3iw5x" path="res://scenes/platforms/bubble_platform.tscn" id="12_fooeo"]
+
+[node name="LVL_4" type="Node2D" unique_id=1419489253]
+
+[node name="GUI" parent="." unique_id=1727581627 instance=ExtResource("1_7p4mo")]
+
+[node name="Level-Num" parent="." unique_id=1727256295 instance=ExtResource("2_p3i0m")]
+level_number = 4
+
+[node name="player" parent="." unique_id=582848631 instance=ExtResource("3_ws1vl")]
+position = Vector2(765, 208)
+
+[node name="floors" type="Node2D" parent="." unique_id=1141937451]
+
+[node name="floor_1" parent="floors" unique_id=1121320848 instance=ExtResource("5_36we3")]
+position = Vector2(703, -40)
+
+[node name="floor_8" parent="floors" unique_id=1233951371 instance=ExtResource("5_36we3")]
+position = Vector2(471, -40)
+
+[node name="floor_2" parent="floors" unique_id=1501901173 instance=ExtResource("6_trk71")]
+position = Vector2(839, 71)
+rotation = 1.5707964
+
+[node name="floor_6" parent="floors" unique_id=551221901 instance=ExtResource("6_trk71")]
+position = Vector2(134, 106)
+rotation = 1.5707964
+
+[node name="floor_3" parent="floors" unique_id=365716653 instance=ExtResource("7_2885o")]
+position = Vector2(692, 249)
+
+[node name="floor_4" parent="floors" unique_id=897216440 instance=ExtResource("8_4b320")]
+position = Vector2(449, 250)
+
+[node name="floor_9" parent="floors" unique_id=1331313086 instance=ExtResource("8_4b320")]
+position = Vector2(840, 143)
+rotation = 1.5707964
+
+[node name="floor_11" parent="floors" unique_id=246427731 instance=ExtResource("8_4b320")]
+position = Vector2(731, 250)
+rotation = 3.1415927
+
+[node name="floor_10" parent="floors" unique_id=228197705 instance=ExtResource("8_4b320")]
+z_index = 1
+position = Vector2(702, 130)
+
+[node name="floor_7" parent="floors" unique_id=1552304320 instance=ExtResource("8_4b320")]
+position = Vector2(246, -40)
+
+[node name="floor_12" parent="floors" unique_id=1641624537 instance=ExtResource("8_4b320")]
+z_index = 1
+position = Vector2(325, 130)
+rotation = 3.1415927
+scale = Vector2(0.7, 1)
+
+[node name="floor_5" parent="floors" unique_id=42693163 instance=ExtResource("9_asaf2")]
+position = Vector2(214, 250)
+
+[node name="pipes" type="Node2D" parent="." unique_id=1957546166]
+
+[node name="soap_bubbles_pipe" parent="pipes" unique_id=1913815980 instance=ExtResource("10_vd1e2")]
+position = Vector2(610, 147)
+rotation = -1.5707964
+
+[node name="soap_bubbles_pipe2" parent="pipes" unique_id=567846163 instance=ExtResource("10_vd1e2")]
+position = Vector2(378, 114)
+rotation = 1.5707964
+
+[node name="BubblePlatform" parent="." unique_id=869779138 instance=ExtResource("12_fooeo")]
+position = Vector2(494, 102)
+
+[node name="next_level" parent="." unique_id=715973679 instance=ExtResource("4_5n276")]
+position = Vector2(769, 89)
+next_level_scene = ExtResource("5_ws1vl")
