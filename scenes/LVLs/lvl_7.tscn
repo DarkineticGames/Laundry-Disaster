@@ -1,0 +1,130 @@
+[gd_scene format=3 uid="uid://bjxkg4wa0ocnu"]
+
+[ext_resource type="PackedScene" uid="uid://m8ha44y4wjsq" path="res://scenes/UI/gui.tscn" id="1_mq1og"]
+[ext_resource type="PackedScene" uid="uid://dphngkp4iwbcr" path="res://scenes/level_num.tscn" id="2_yow02"]
+[ext_resource type="PackedScene" uid="uid://c857to8qe1ica" path="res://scenes/characters/player.tscn" id="3_vg1gl"]
+[ext_resource type="PackedScene" uid="uid://3t24tfqjsxei" path="res://scenes/next_level.tscn" id="4_awiaf"]
+[ext_resource type="PackedScene" uid="uid://dt1i2hpbvlu8s" path="res://scenes/platforms/platf_jacket.tscn" id="5_0ybcf"]
+[ext_resource type="PackedScene" uid="uid://bo47oabif3vg7" path="res://scenes/LVLs/lvl_8.tscn" id="5_awiaf"]
+[ext_resource type="PackedScene" uid="uid://n36201c8bmnt" path="res://scenes/platforms/platf_jacket2.tscn" id="6_tg5td"]
+[ext_resource type="PackedScene" uid="uid://bnmuhxlsrr82o" path="res://scenes/platforms/platf_pants.tscn" id="7_bcmsi"]
+[ext_resource type="PackedScene" uid="uid://dmaoyg5k3iw5x" path="res://scenes/platforms/bubble_platform.tscn" id="8_ltxvk"]
+[ext_resource type="PackedScene" uid="uid://8jiukvc1tb5f" path="res://scenes/floors/floor_cube.tscn" id="9_rl31f"]
+[ext_resource type="PackedScene" uid="uid://d2dp4reaygyer" path="res://scenes/floors/floor_2.tscn" id="10_7gkf8"]
+[ext_resource type="PackedScene" uid="uid://ubltm6gopq5s" path="res://scenes/platforms/platf_shirt1.tscn" id="11_gi8rm"]
+[ext_resource type="PackedScene" uid="uid://ck3rguuq361fm" path="res://scenes/floors/floor_4.tscn" id="11_vg1gl"]
+[ext_resource type="PackedScene" uid="uid://b4udsnq4et8p8" path="res://scenes/hazards/soap_bubble.tscn" id="12_anjag"]
+[ext_resource type="PackedScene" uid="uid://d2n45165g6s3l" path="res://scenes/hazards/kill_zone.tscn" id="14_awiaf"]
+
+[node name="LVL_7" type="Node2D" unique_id=571022587]
+
+[node name="GUI" parent="." unique_id=1727581627 instance=ExtResource("1_mq1og")]
+
+[node name="Level-Num" parent="." unique_id=1727256295 instance=ExtResource("2_yow02")]
+level_number = 7
+
+[node name="player" parent="." unique_id=582848631 instance=ExtResource("3_vg1gl")]
+position = Vector2(35, 239)
+
+[node name="next_level" parent="." unique_id=715973679 instance=ExtResource("4_awiaf")]
+position = Vector2(590, 277)
+next_level_scene = ExtResource("5_awiaf")
+
+[node name="platforms" type="Node2D" parent="." unique_id=380378985]
+
+[node name="Platf-jacket" parent="platforms" unique_id=676350862 instance=ExtResource("5_0ybcf")]
+position = Vector2(34, 180)
+scale = Vector2(0.75, 0.75)
+
+[node name="Platf-jacket2" parent="platforms" unique_id=1070690933 instance=ExtResource("6_tg5td")]
+position = Vector2(191, 278)
+
+[node name="Platf-pants" parent="platforms" unique_id=25369622 instance=ExtResource("7_bcmsi")]
+position = Vector2(137, 175)
+
+[node name="BubblePlatform" parent="platforms" unique_id=869779138 instance=ExtResource("8_ltxvk")]
+position = Vector2(235, 179)
+rotation = 3.1415927
+
+[node name="BubblePlatform2" parent="platforms" unique_id=478677348 instance=ExtResource("8_ltxvk")]
+position = Vector2(304, 185)
+rotation = 3.1415927
+
+[node name="BubblePlatform3" parent="platforms" unique_id=352489035 instance=ExtResource("8_ltxvk")]
+position = Vector2(360, 203)
+rotation = 3.1415927
+
+[node name="floors" type="Node2D" parent="." unique_id=1321388149]
+
+[node name="floor_cube" parent="floors" unique_id=1518292012 instance=ExtResource("9_rl31f")]
+position = Vector2(46, 310)
+scale = Vector2(1.5, 1.5)
+
+[node name="floor_cube2" parent="floors" unique_id=308939681 instance=ExtResource("9_rl31f")]
+position = Vector2(660, 319)
+rotation = 1.5707964
+scale = Vector2(1.5, 1.5)
+
+[node name="floor_2" parent="floors" unique_id=1121320848 instance=ExtResource("10_7gkf8")]
+position = Vector2(513, 315)
+rotation = 3.1415927
+
+[node name="floor_4" parent="floors" unique_id=1694636717 instance=ExtResource("11_vg1gl")]
+position = Vector2(-26, 321)
+rotation = 1.5707964
+
+[node name="floor_5" parent="floors" unique_id=1150773445 instance=ExtResource("11_vg1gl")]
+position = Vector2(660, 217)
+rotation = 1.5707964
+
+[node name="floor_3" parent="floors" unique_id=446933745 instance=ExtResource("10_7gkf8")]
+position = Vector2(-23, 164)
+rotation = 1.5707964
+
+[node name="floor_6" parent="floors" unique_id=1711615294 instance=ExtResource("10_7gkf8")]
+position = Vector2(-23, 164)
+rotation = 1.5707964
+
+[node name="hazards" type="Node2D" parent="." unique_id=1326491385]
+
+[node name="Platf-shirt1" parent="hazards" unique_id=240898613 instance=ExtResource("11_gi8rm")]
+position = Vector2(446, 185)
+
+[node name="soap_bubble" parent="hazards" unique_id=657462297 instance=ExtResource("12_anjag")]
+position = Vector2(277, 297)
+
+[node name="soap_bubble2" parent="hazards" unique_id=1463774385 instance=ExtResource("12_anjag")]
+position = Vector2(335, 311)
+
+[node name="kill_zones_down" type="Node2D" parent="." unique_id=514721646]
+
+[node name="kill_zone" parent="kill_zones_down" unique_id=1933419617 instance=ExtResource("14_awiaf")]
+position = Vector2(38, 339)
+
+[node name="kill_zone4" parent="kill_zones_down" unique_id=1941480660 instance=ExtResource("14_awiaf")]
+position = Vector2(591, 339)
+
+[node name="kill_zone2" parent="kill_zones_down" unique_id=1402212314 instance=ExtResource("14_awiaf")]
+position = Vector2(223, 339)
+
+[node name="kill_zone3" parent="kill_zones_down" unique_id=1778596213 instance=ExtResource("14_awiaf")]
+position = Vector2(407, 339)
+
+[node name="kill_zones_up" type="Node2D" parent="." unique_id=20994073]
+position = Vector2(31, 0)
+
+[node name="kill_zone" parent="kill_zones_up" unique_id=1069716028 instance=ExtResource("14_awiaf")]
+position = Vector2(89, 136)
+rotation = 3.1415927
+
+[node name="kill_zone4" parent="kill_zones_up" unique_id=740501066 instance=ExtResource("14_awiaf")]
+position = Vector2(643, 136)
+rotation = 3.1415927
+
+[node name="kill_zone2" parent="kill_zones_up" unique_id=1848799368 instance=ExtResource("14_awiaf")]
+position = Vector2(274, 136)
+rotation = 3.1415927
+
+[node name="kill_zone3" parent="kill_zones_up" unique_id=905817861 instance=ExtResource("14_awiaf")]
+position = Vector2(458, 136)
+rotation = 3.1415927

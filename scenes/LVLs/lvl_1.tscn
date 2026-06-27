@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://curhw3e0np0ww"]
+
+[ext_resource type="PackedScene" uid="uid://m8ha44y4wjsq" path="res://scenes/UI/gui.tscn" id="1_up83u"]
+[ext_resource type="PackedScene" uid="uid://dphngkp4iwbcr" path="res://scenes/level_num.tscn" id="2_v30tu"]
+[ext_resource type="PackedScene" uid="uid://c857to8qe1ica" path="res://scenes/characters/player.tscn" id="3_mct4f"]
+[ext_resource type="PackedScene" uid="uid://dc37tkmcu3ayb" path="res://scenes/floors/floor_1.tscn" id="4_fqodv"]
+[ext_resource type="PackedScene" uid="uid://d2dp4reaygyer" path="res://scenes/floors/floor_2.tscn" id="5_6cf2j"]
+[ext_resource type="PackedScene" uid="uid://0e8lupy5vnai" path="res://scenes/LVLs/lvl_2.tscn" id="5_fqodv"]
+[ext_resource type="PackedScene" uid="uid://bnucscfu21m3y" path="res://scenes/floors/floor_3.tscn" id="6_lkopa"]
+[ext_resource type="PackedScene" uid="uid://3t24tfqjsxei" path="res://scenes/next_level.tscn" id="9_f403a"]
+[ext_resource type="PackedScene" uid="uid://ck3rguuq361fm" path="res://scenes/floors/floor_4.tscn" id="10_lkopa"]
+
+[node name="LVL_1" type="Node2D" unique_id=1639338050]
+
+[node name="GUI" parent="." unique_id=1727581627 instance=ExtResource("1_up83u")]
+
+[node name="Level-Num" parent="." unique_id=1727256295 instance=ExtResource("2_v30tu")]
+
+[node name="player" parent="." unique_id=582848631 instance=ExtResource("3_mct4f")]
+position = Vector2(258, 175)
+
+[node name="next_level" parent="." unique_id=715973679 instance=ExtResource("9_f403a")]
+position = Vector2(512, 174)
+next_level_scene = ExtResource("5_fqodv")
+
+[node name="floors" type="Node2D" parent="." unique_id=1416451768]
+
+[node name="floor_1" parent="floors" unique_id=1121320848 instance=ExtResource("4_fqodv")]
+position = Vector2(232, 215)
+
+[node name="floor_3" parent="floors" unique_id=436285562 instance=ExtResource("6_lkopa")]
+position = Vector2(481, 215)
+rotation = -3.1415925
+
+[node name="floor_4" parent="floors" unique_id=1668260208 instance=ExtResource("10_lkopa")]
+position = Vector2(232, 74)
+
+[node name="floor_2" parent="floors" unique_id=40043249 instance=ExtResource("5_6cf2j")]
+position = Vector2(481, 74)
+
+[node name="floor_5" parent="floors" unique_id=173541471 instance=ExtResource("5_6cf2j")]
+position = Vector2(125, 147)
+rotation = 1.5707964
+scale = Vector2(0.7, 1)
+
+[node name="floor_6" parent="floors" unique_id=313864706 instance=ExtResource("5_6cf2j")]
+position = Vector2(602, 146.99998)
+rotation = 1.5707964
+scale = Vector2(0.7, 1)

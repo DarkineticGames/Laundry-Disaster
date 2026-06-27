@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://bx14qnmp3fn1j"]
+
+[ext_resource type="Script" uid="uid://cstw6d61th0fw" path="res://scripts/transition_screen.gd" id="1_pncu4"]
+[ext_resource type="FontFile" uid="uid://bodhohqjn0qat" path="res://assets/UI/fonts/PixelOperator8-Bold.ttf" id="2_l7jrl"]
+[ext_resource type="Texture2D" uid="uid://b62u6mwwk0c88" path="res://assets/UI/laundry loading/washing_machine1.png" id="3_7cy2o"]
+[ext_resource type="Texture2D" uid="uid://bdvn0sxo87yn7" path="res://assets/UI/laundry loading/washing_machine2.png" id="4_sm8iq"]
+[ext_resource type="Texture2D" uid="uid://2xt8usihvkou" path="res://assets/UI/laundry loading/washing_machine3.png" id="5_7ocl6"]
+[ext_resource type="Texture2D" uid="uid://cidaxwu030g3g" path="res://assets/UI/laundry loading/washing_machine4.png" id="6_2l6tp"]
+[ext_resource type="Texture2D" uid="uid://bsjfrecemnx4y" path="res://assets/UI/laundry loading/washing_machine5.png" id="7_aw6h0"]
+[ext_resource type="Texture2D" uid="uid://b1e2qdeu5w1jy" path="res://assets/UI/laundry loading/washing_machine6.png" id="8_eyajl"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6pl1w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_7cy2o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_sm8iq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_7ocl6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_2l6tp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_aw6h0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_eyajl")
+}],
+"loop": 1,
+"name": &"spinning",
+"speed": 15.0
+}]
+
+[node name="TransitionScreen" type="CanvasLayer" unique_id=603259670]
+script = ExtResource("1_pncu4")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=323248331]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.3109197, 0.35808238, 0.44284606, 1)
+
+[node name="Label" type="Label" parent="." unique_id=276230672]
+modulate = Color(0, 0, 0, 1)
+anchors_preset = -1
+anchor_left = 0.39200002
+anchor_top = 0.289
+anchor_right = 0.60800004
+anchor_bottom = 0.333
+offset_left = -0.24002075
+offset_top = -0.040000916
+offset_right = 0.23995972
+offset_bottom = 0.11999512
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_l7jrl")
+text = "SPINNING..."
+
+[node name="washing_machine" type="AnimatedSprite2D" parent="." unique_id=1671635967]
+position = Vector2(359, 170)
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_6pl1w")
+animation = &"spinning"
+frame_progress = 0.62807864
+
+[node name="Timer" type="Timer" parent="." unique_id=1489402726]
+wait_time = 1.2999999999999998
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

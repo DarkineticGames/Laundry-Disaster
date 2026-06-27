@@ -149,6 +149,8 @@ texture = ExtResource("5_tk48h")
 position = Vector2(-2.000001, -15.499997)
 scale = Vector2(1.2444446, 1.1777778)
 sprite_frames = SubResource("SpriteFrames_6pl1w")
+frame = 3
+frame_progress = 0.3840456
 
 [node name="display" type="Sprite2D" parent="control_panel" unique_id=449803518]
 position = Vector2(-2, 29.499998)
@@ -156,10 +158,15 @@ scale = Vector2(1.1714286, 1.1750004)
 texture = ExtResource("6_lbamw")
 
 [node name="Label" type="Label" parent="." unique_id=1707005277]
-offset_left = 7.0
-offset_top = 195.0
-offset_right = 69.0
-offset_bottom = 220.0
+anchors_preset = -1
+anchor_left = 0.010000001
+anchor_top = 0.54200006
+anchor_right = 0.096
+anchor_bottom = 0.611
+offset_left = -0.20000029
+offset_top = -0.120025635
+offset_right = -0.12000275
+offset_bottom = 0.039993286
 theme_override_fonts/font = ExtResource("2_dk0i5")
 theme_override_font_sizes/font_size = 8
 text = "LVL 01"

@@ -1,0 +1,108 @@
+[gd_scene format=3 uid="uid://1xa0ggxbeiul"]
+
+[ext_resource type="PackedScene" uid="uid://m8ha44y4wjsq" path="res://scenes/UI/gui.tscn" id="1_iux73"]
+[ext_resource type="PackedScene" uid="uid://dphngkp4iwbcr" path="res://scenes/level_num.tscn" id="2_5yah6"]
+[ext_resource type="PackedScene" uid="uid://c857to8qe1ica" path="res://scenes/characters/player.tscn" id="3_rxegn"]
+[ext_resource type="PackedScene" uid="uid://3t24tfqjsxei" path="res://scenes/next_level.tscn" id="4_ogra0"]
+[ext_resource type="PackedScene" uid="uid://bjxkg4wa0ocnu" path="res://scenes/LVLs/lvl_7.tscn" id="5_5yah6"]
+[ext_resource type="PackedScene" uid="uid://dc37tkmcu3ayb" path="res://scenes/floors/floor_1.tscn" id="5_fheye"]
+[ext_resource type="PackedScene" uid="uid://d2dp4reaygyer" path="res://scenes/floors/floor_2.tscn" id="6_k72kf"]
+[ext_resource type="PackedScene" uid="uid://bnucscfu21m3y" path="res://scenes/floors/floor_3.tscn" id="7_4tiwr"]
+[ext_resource type="PackedScene" uid="uid://ck3rguuq361fm" path="res://scenes/floors/floor_4.tscn" id="8_qppy0"]
+[ext_resource type="PackedScene" uid="uid://b4tgetybcs4ka" path="res://scenes/floors/floor_5.tscn" id="9_u1epv"]
+[ext_resource type="PackedScene" uid="uid://8jiukvc1tb5f" path="res://scenes/floors/floor_cube.tscn" id="10_f2aid"]
+[ext_resource type="PackedScene" uid="uid://dy3k5au2e5g1t" path="res://scenes/hazards/soap_bubbles_pipe.tscn" id="11_qlt7f"]
+[ext_resource type="PackedScene" uid="uid://d2n45165g6s3l" path="res://scenes/hazards/kill_zone.tscn" id="12_rxegn"]
+[ext_resource type="PackedScene" uid="uid://dmaoyg5k3iw5x" path="res://scenes/platforms/bubble_platform.tscn" id="13_ogra0"]
+[ext_resource type="PackedScene" uid="uid://b4udsnq4et8p8" path="res://scenes/hazards/soap_bubble.tscn" id="14_fheye"]
+
+[node name="LVL_6" type="Node2D" unique_id=1419489253]
+
+[node name="GUI" parent="." unique_id=1727581627 instance=ExtResource("1_iux73")]
+
+[node name="Level-Num" parent="." unique_id=1727256295 instance=ExtResource("2_5yah6")]
+level_number = 6
+
+[node name="player" parent="." unique_id=582848631 instance=ExtResource("3_rxegn")]
+position = Vector2(765, 208)
+
+[node name="next_level" parent="." unique_id=715973679 instance=ExtResource("4_ogra0")]
+position = Vector2(782, 40)
+next_level_scene = ExtResource("5_5yah6")
+
+[node name="floors" type="Node2D" parent="." unique_id=1141937451]
+
+[node name="floor_1" parent="floors" unique_id=1121320848 instance=ExtResource("5_fheye")]
+position = Vector2(703, -40)
+
+[node name="floor_8" parent="floors" unique_id=1233951371 instance=ExtResource("5_fheye")]
+position = Vector2(279, -40)
+
+[node name="floor_2" parent="floors" unique_id=1501901173 instance=ExtResource("6_k72kf")]
+position = Vector2(839, 71)
+rotation = 1.5707964
+
+[node name="floor_6" parent="floors" unique_id=551221901 instance=ExtResource("6_k72kf")]
+position = Vector2(134, 106)
+rotation = 1.5707964
+
+[node name="floor_3" parent="floors" unique_id=365716653 instance=ExtResource("7_4tiwr")]
+position = Vector2(692, 249)
+
+[node name="floor_4" parent="floors" unique_id=897216440 instance=ExtResource("8_qppy0")]
+position = Vector2(449, 250)
+
+[node name="floor_9" parent="floors" unique_id=1331313086 instance=ExtResource("8_qppy0")]
+position = Vector2(840, 143)
+rotation = 1.5707964
+
+[node name="floor_11" parent="floors" unique_id=246427731 instance=ExtResource("8_qppy0")]
+position = Vector2(731, 250)
+rotation = 3.1415927
+
+[node name="floor_10" parent="floors" unique_id=228197705 instance=ExtResource("8_qppy0")]
+z_index = 1
+position = Vector2(702, 130)
+
+[node name="floor_7" parent="floors" unique_id=1552304320 instance=ExtResource("8_qppy0")]
+position = Vector2(246, -40)
+
+[node name="floor_12" parent="floors" unique_id=1641624537 instance=ExtResource("8_qppy0")]
+z_index = 1
+position = Vector2(325, 130)
+rotation = 3.1415927
+scale = Vector2(0.7, 1)
+
+[node name="floor_5" parent="floors" unique_id=42693163 instance=ExtResource("9_u1epv")]
+position = Vector2(214, 250)
+
+[node name="floor_cube" parent="floors" unique_id=1518292012 instance=ExtResource("10_f2aid")]
+position = Vector2(779, 87)
+
+[node name="floor_cube2" parent="floors" unique_id=2058869071 instance=ExtResource("10_f2aid")]
+position = Vector2(715, 87)
+
+[node name="pipes" type="Node2D" parent="." unique_id=1957546166]
+
+[node name="soap_bubbles_pipe" parent="pipes" unique_id=1913815980 instance=ExtResource("11_qlt7f")]
+position = Vector2(628, 147)
+rotation = -1.5707964
+
+[node name="soap_bubbles_pipe2" parent="pipes" unique_id=111910197 instance=ExtResource("11_qlt7f")]
+position = Vector2(361, 114)
+rotation = 1.5707964
+
+[node name="kill_zone" parent="." unique_id=1933419617 instance=ExtResource("12_rxegn")]
+position = Vector2(540, 18)
+rotation = 3.1415927
+
+[node name="platforms" type="Node2D" parent="." unique_id=1701266524]
+
+[node name="BubblePlatform" parent="platforms" unique_id=869779138 instance=ExtResource("13_ogra0")]
+position = Vector2(461, 100)
+
+[node name="BubblePlatform2" parent="platforms" unique_id=1675985042 instance=ExtResource("13_ogra0")]
+position = Vector2(521, 99)
+
+[node name="soap_bubble" parent="." unique_id=657462297 instance=ExtResource("14_fheye")]
+position = Vector2(651, 84)

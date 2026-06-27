@@ -13,10 +13,18 @@ func _on_resume_button_pressed() -> void:
 	GameManager.toggle_pause()
 
 
-
-func _on_quit_button_pressed() -> void:
-	get_tree().quit()
-
-
 func _on_restart_button_pressed() -> void:
+	GameManager.gravity_direction = 1
+	GameManager.toggle_pause()
 	GameManager.player_die()
+	GameManager.gravity_direction = 1
+
+
+func _on_main_menu_pressed() -> void:
+	get_tree().paused = false
+	visible = false
+	GameManager.is_gameplay_active = false
+	GameManager.toggle_pause()
+
+	await TransitionScreen.play_transition(
+		load("res://scenes/UI/main_menu.tscn"))
