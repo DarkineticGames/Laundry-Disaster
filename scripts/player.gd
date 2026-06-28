@@ -78,11 +78,6 @@ func _physics_process(delta):
 		move_and_slide()
 		return
 
-	if Input.is_action_just_pressed("no_gravity"):
-		gravity = 0
-	if Input.is_action_just_pressed("return_gravity"):
-		gravity = 1300.0
-
 	# Gravity
 	if not is_on_floor():
 		velocity.y += gravity * GameManager.gravity_direction * delta

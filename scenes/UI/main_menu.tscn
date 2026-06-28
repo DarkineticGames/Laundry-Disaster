@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://cyp8pj7qxcnu4"]
 
+[ext_resource type="Script" uid="uid://bq5n8rewi332b" path="res://test_viewport.gd" id="1_i7p8e"]
 [ext_resource type="Script" uid="uid://dwuhcidsmadio" path="res://scripts/main_menu.gd" id="1_wfqjx"]
 [ext_resource type="Texture2D" uid="uid://bwuof5ndr58w5" path="res://assets/UI/logo.png" id="2_a1wsg"]
 [ext_resource type="Texture2D" uid="uid://baepjiwojxl88" path="res://assets/UI/buttons/green_button.png" id="2_mf7fl"]
@@ -54,6 +55,7 @@ atlas = ExtResource("10_nu0op")
 region = Rect2(4, 24, 56, 22)
 
 [node name="main" type="Node2D" unique_id=1121871396]
+script = ExtResource("1_i7p8e")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1774939200]
 script = ExtResource("1_wfqjx")

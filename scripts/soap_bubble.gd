@@ -27,6 +27,7 @@ func _on_timer_timeout() -> void:
 func _pop() -> void:
 	if is_popped:
 		return
+	GameManager.pop.play()
 	is_popped = true
 	collision_shape_2d.set_deferred("disabled", true)
 	hurtbox.set_deferred("monitoring", false)

@@ -4,7 +4,11 @@ var is_dead := false
 var is_gameplay_active := false 
 var gravity_direction := 1
 
-@onready var break_sfx: AudioStreamPlayer2D = $BreakSFX
+@onready var finish_wash: AudioStreamPlayer2D = $FinishWash
+@onready var pop: AudioStreamPlayer2D = $Pop
+@onready var button_press: AudioStreamPlayer2D = $"Button-press"
+@onready var timer_click: AudioStreamPlayer2D = $"timer-click"
+
 
 
 func _ready() -> void:
@@ -34,8 +38,8 @@ func player_die():
 		player.die()
 		gravity_direction = 1
 		player.animation.play("die")
+		finish_wash.play()
 	gravity_direction = 1
-	#break_sfx.play()
 	
 
 	await get_tree().create_timer(0.6).timeout
