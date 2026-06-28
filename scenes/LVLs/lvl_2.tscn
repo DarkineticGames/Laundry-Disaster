@@ -32,7 +32,7 @@ level_number = 2
 position = Vector2(268, 208)
 
 [node name="next_level" parent="." unique_id=715973679 instance=ExtResource("8_erg5w")]
-position = Vector2(767, 206)
+position = Vector2(772, 211)
 next_level_scene = ExtResource("5_0bsjr")
 
 [node name="floors" type="Node2D" parent="." unique_id=1141937451]

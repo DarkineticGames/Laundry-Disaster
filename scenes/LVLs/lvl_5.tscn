@@ -26,7 +26,6 @@
 [node name="LVL_5" type="Node2D" unique_id=1095669386]
 
 [node name="GUI" parent="." unique_id=1727581627 instance=ExtResource("1_m18xg")]
-visible = false
 
 [node name="Level-Num" parent="." unique_id=1727256295 instance=ExtResource("2_7hf2j")]
 level_number = 5

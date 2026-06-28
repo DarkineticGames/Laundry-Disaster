@@ -1,5 +1,4 @@
 extends CanvasLayer
-@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 ## Attach to the root CanvasLayer of your pause menu scene, then add this
 ## scene as a SECOND autoload (Project Settings > Autoload), named exactly
@@ -11,12 +10,11 @@ func _ready() -> void:
 
 ## Connect your Resume button's "pressed" signal to this
 func _on_resume_button_pressed() -> void:
-	audio_stream_player_2d.play()
 	GameManager.toggle_pause()
 
 
 func _on_restart_button_pressed() -> void:
-	audio_stream_player_2d.play()
+	GameManager.button_press.play()
 	GameManager.gravity_direction = 1
 	GameManager.toggle_pause()
 	GameManager.player_die()
@@ -24,7 +22,7 @@ func _on_restart_button_pressed() -> void:
 
 
 func _on_main_menu_pressed() -> void:
-	audio_stream_player_2d.play()
+	GameManager.button_press.play()
 	get_tree().paused = false
 	visible = false
 	GameManager.is_gameplay_active = false
