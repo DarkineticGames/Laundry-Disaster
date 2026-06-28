@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cl4u4elehira2" path="res://scripts/bubble_platform.gd" id="1_6giry"]
 [ext_resource type="Texture2D" uid="uid://p0fg2bk0epuw" path="res://assets/platforms/water_bubble.png" id="2_n0cff"]
 [ext_resource type="Texture2D" uid="uid://dnwt2xpsmxcxc" path="res://assets/platforms/water_bubble_pop.png" id="3_pp5ow"]
+[ext_resource type="AudioStream" uid="uid://r3agxejwfxvl" path="res://assets/platforms/universfield-bubble-pop-06-351337.mp3" id="4_nahsy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nahsy"]
 atlas = ExtResource("2_n0cff")
@@ -131,6 +132,9 @@ shape = SubResource("RectangleShape2D_6pl1w")
 
 [node name="Timer" type="Timer" parent="." unique_id=1785805027]
 wait_time = 0.05
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1985522597]
+stream = ExtResource("4_nahsy")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,0 +1,139 @@
+[gd_scene format=3 uid="uid://dy6n1gv6kyo3e"]
+
+[ext_resource type="Texture2D" uid="uid://bq2odn6dp1mpc" path="res://assets/background_new.png" id="1_anprf"]
+[ext_resource type="Texture2D" uid="uid://de7i63qi6rfrn" path="res://scenes/LVLs/Sprite-0001.png" id="2_dpp0m"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dpp0m"]
+atlas = ExtResource("1_anprf")
+region = Rect2(0, 0, 640, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qd2e1"]
+atlas = ExtResource("1_anprf")
+region = Rect2(640, 0, 640, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5vsr6"]
+atlas = ExtResource("1_anprf")
+region = Rect2(1280, 0, 640, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w68nc"]
+atlas = ExtResource("1_anprf")
+region = Rect2(1920, 0, 640, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bf1jy"]
+atlas = ExtResource("1_anprf")
+region = Rect2(2560, 0, 640, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r6ch1"]
+atlas = ExtResource("1_anprf")
+region = Rect2(3200, 0, 640, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4la4c"]
+atlas = ExtResource("1_anprf")
+region = Rect2(3840, 0, 640, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j28yk"]
+atlas = ExtResource("1_anprf")
+region = Rect2(4480, 0, 640, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_we8gc"]
+atlas = ExtResource("1_anprf")
+region = Rect2(5120, 0, 640, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u8vpk"]
+atlas = ExtResource("1_anprf")
+region = Rect2(5760, 0, 640, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4183b"]
+atlas = ExtResource("1_anprf")
+region = Rect2(6400, 0, 640, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6y8fd"]
+atlas = ExtResource("1_anprf")
+region = Rect2(7040, 0, 640, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0q054"]
+atlas = ExtResource("1_anprf")
+region = Rect2(7680, 0, 640, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_05l13"]
+atlas = ExtResource("1_anprf")
+region = Rect2(8320, 0, 640, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r3gc4"]
+atlas = ExtResource("1_anprf")
+region = Rect2(8960, 0, 640, 360)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s7wsd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dpp0m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qd2e1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5vsr6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w68nc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bf1jy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r6ch1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4la4c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j28yk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_we8gc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u8vpk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4183b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6y8fd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0q054")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_05l13")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r3gc4")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="bg" type="Node2D" unique_id=1391952208]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1792222226]
+position = Vector2(367, 173)
+sprite_frames = SubResource("SpriteFrames_s7wsd")
+autoplay = "default"
+frame_progress = 0.671848
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="." unique_id=46262362]
+z_index = -1
+position = Vector2(341, 211)
+scale = Vector2(3.571875, 2.5180557)
+sprite_frames = SubResource("SpriteFrames_s7wsd")
+autoplay = "default"
+frame_progress = 0.69884956
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=225992107]
+z_index = -1
+position = Vector2(557, 1838.9999)
+scale = Vector2(1.4677083, 1.4527777)
+texture = ExtResource("2_dpp0m")

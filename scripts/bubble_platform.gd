@@ -3,6 +3,7 @@ extends StaticBody2D
 @export var respawn_time: float = 3.0       # how long until it comes back
 @export var sink_distance := 8.0
 @export var sink_duration := 0.15
+@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 @onready var timer: Timer = $Timer
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
@@ -28,6 +29,7 @@ func _on_timer_timeout() -> void:
 
 func _pop() -> void:
 	is_popped = true
+	audio_stream_player_2d.play()
 
 	collision_shape_2d.disabled = true
 	area_2d.monitoring = false

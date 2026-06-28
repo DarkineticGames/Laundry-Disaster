@@ -24,6 +24,12 @@
 [ext_resource type="PackedScene" uid="uid://dy3k5au2e5g1t" path="res://scenes/hazards/soap_bubbles_pipe.tscn" id="18_fqd5u"]
 [ext_resource type="PackedScene" uid="uid://d2n45165g6s3l" path="res://scenes/hazards/kill_zone.tscn" id="19_rjnku"]
 [ext_resource type="PackedScene" uid="uid://b4udsnq4et8p8" path="res://scenes/hazards/soap_bubble.tscn" id="22_rjnku"]
+[ext_resource type="PackedScene" uid="uid://dy6n1gv6kyo3e" path="res://scenes/bg.tscn" id="25_jbnu6"]
+[ext_resource type="Texture2D" uid="uid://bph75fkc76u2t" path="res://assets/platforms/pants2.png" id="26_lkbd0"]
+[ext_resource type="Texture2D" uid="uid://d2xxnxnermap4" path="res://assets/platforms/shirt1.png" id="27_tmsya"]
+[ext_resource type="Texture2D" uid="uid://blcm0u1l5xgly" path="res://assets/platforms/towel2.png" id="28_dq4it"]
+[ext_resource type="Texture2D" uid="uid://be1gfw6la3a51" path="res://assets/platforms/pants.png" id="29_yabg4"]
+[ext_resource type="Texture2D" uid="uid://cwsv3bryf4pbw" path="res://assets/platforms/towel.png" id="30_8845a"]
 
 [node name="LVL_10" type="Node2D" unique_id=1955289268]
 
@@ -326,3 +332,39 @@ position = Vector2(571, -136)
 
 [node name="kill_zone3" parent="kill_zones" unique_id=385627746 instance=ExtResource("19_rjnku")]
 position = Vector2(755, -136)
+
+[node name="bg" parent="." unique_id=1391952208 instance=ExtResource("25_jbnu6")]
+z_index = -9
+position = Vector2(377, -368)
+
+[node name="Pants2" type="Sprite2D" parent="." unique_id=391222703]
+position = Vector2(46, -185)
+texture = ExtResource("26_lkbd0")
+
+[node name="Shirt1" type="Sprite2D" parent="." unique_id=2090959794]
+position = Vector2(399, 322)
+texture = ExtResource("27_tmsya")
+
+[node name="Towel2" type="Sprite2D" parent="." unique_id=1160639321]
+position = Vector2(513, 301)
+texture = ExtResource("28_dq4it")
+
+[node name="Shirt2" type="Sprite2D" parent="." unique_id=1973702236]
+position = Vector2(698, 287)
+texture = ExtResource("27_tmsya")
+
+[node name="Pants" type="Sprite2D" parent="." unique_id=1092694195]
+position = Vector2(287, 313)
+texture = ExtResource("29_yabg4")
+
+[node name="Shirt3" type="Sprite2D" parent="." unique_id=1822037753]
+position = Vector2(203, 263)
+texture = ExtResource("27_tmsya")
+
+[node name="Pants3" type="Sprite2D" parent="." unique_id=1208142670]
+position = Vector2(1201, 63)
+texture = ExtResource("29_yabg4")
+
+[node name="Towel" type="Sprite2D" parent="." unique_id=1279206441]
+position = Vector2(1177, -226)
+texture = ExtResource("30_8845a")

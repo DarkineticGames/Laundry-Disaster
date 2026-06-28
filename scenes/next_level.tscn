@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dag7nl4kxk4bl" path="res://scripts/next_level.gd" id="1_e8fy2"]
 [ext_resource type="Texture2D" uid="uid://buljdipphmucw" path="res://assets/portal.png" id="2_sd4vo"]
+[ext_resource type="AudioStream" uid="uid://ch3tx85yxxoav" path="res://assets/platforms/freesound_community-washing-machine-beep-103422.mp3" id="3_e8fy2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e8fy2"]
 atlas = ExtResource("2_sd4vo")
@@ -83,5 +84,8 @@ frame_progress = 0.7047506
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1392783735]
 position = Vector2(3, 1)
 shape = SubResource("CapsuleShape2D_jnqa7")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1759089500]
+stream = ExtResource("3_e8fy2")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

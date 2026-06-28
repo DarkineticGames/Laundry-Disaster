@@ -4,11 +4,12 @@
 [ext_resource type="Texture2D" uid="uid://baepjiwojxl88" path="res://assets/UI/buttons/green_button.png" id="2_3pfkw"]
 [ext_resource type="Texture2D" uid="uid://cwort8o7lhbqr" path="res://assets/UI/buttons/grn_button_click.png" id="3_xovtl"]
 [ext_resource type="Texture2D" uid="uid://3umgbl7i6txq" path="res://assets/UI/buttons/grn_button_hover.png" id="4_feba6"]
-[ext_resource type="FontFile" uid="uid://bodhohqjn0qat" path="res://Test/assets/brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="5_xovtl"]
+[ext_resource type="FontFile" uid="uid://bodhohqjn0qat" path="res://assets/UI/fonts/PixelOperator8-Bold.ttf" id="5_xovtl"]
 [ext_resource type="Texture2D" uid="uid://ce55q248bl6ua" path="res://assets/UI/buttons/big_red_button.png" id="6_xovtl"]
 [ext_resource type="Texture2D" uid="uid://ufpedcsoda6x" path="res://assets/UI/buttons/big_red_button_click.png" id="7_feba6"]
 [ext_resource type="Texture2D" uid="uid://bey7s2qlhaibl" path="res://assets/UI/buttons/big_red_button_hover.png" id="8_2uduj"]
 [ext_resource type="Texture2D" uid="uid://bagwjmr2is4p7" path="res://assets/UI/display.png" id="9_xovtl"]
+[ext_resource type="AudioStream" uid="uid://d4iag74jqhs4r" path="res://assets/platforms/freesoundsxx-button-press-beep-269718.mp3" id="10_feba6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6pl1w"]
 atlas = ExtResource("2_3pfkw")
@@ -198,6 +199,9 @@ theme_override_font_sizes/font_size = 16
 text = "Stop it anyway?"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1920188177]
+stream = ExtResource("10_feba6")
 
 [connection signal="pressed" from="PauseMenu/MarginContainer/VBoxContainer/Resume" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="PauseMenu/MarginContainer/VBoxContainer/Restart" to="." method="_on_restart_button_pressed"]

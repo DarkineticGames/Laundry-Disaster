@@ -11,6 +11,15 @@
 [ext_resource type="PackedScene" uid="uid://ck3rguuq361fm" path="res://scenes/floors/floor_4.tscn" id="8_0bsjr"]
 [ext_resource type="PackedScene" uid="uid://3t24tfqjsxei" path="res://scenes/next_level.tscn" id="8_erg5w"]
 [ext_resource type="PackedScene" uid="uid://8jiukvc1tb5f" path="res://scenes/floors/floor_cube.tscn" id="10_32vlb"]
+[ext_resource type="PackedScene" uid="uid://dy6n1gv6kyo3e" path="res://scenes/bg.tscn" id="12_32vlb"]
+[ext_resource type="Texture2D" uid="uid://dp73kh02g2p47" path="res://assets/platforms/jacket.png" id="13_gpews"]
+[ext_resource type="Texture2D" uid="uid://bph75fkc76u2t" path="res://assets/platforms/pants2.png" id="14_wsoh0"]
+[ext_resource type="Texture2D" uid="uid://c48gtpgtcs8e2" path="res://assets/platforms/jacket2.png" id="15_bo4qa"]
+[ext_resource type="Texture2D" uid="uid://hnhl1gwnin0f" path="res://assets/platforms/shirt2.png" id="16_gxuvr"]
+[ext_resource type="Texture2D" uid="uid://d2xxnxnermap4" path="res://assets/platforms/shirt1.png" id="17_g77ou"]
+[ext_resource type="Texture2D" uid="uid://blcm0u1l5xgly" path="res://assets/platforms/towel2.png" id="18_snwu5"]
+[ext_resource type="Texture2D" uid="uid://cwsv3bryf4pbw" path="res://assets/platforms/towel.png" id="19_xpg2n"]
+[ext_resource type="Texture2D" uid="uid://be1gfw6la3a51" path="res://assets/platforms/pants.png" id="20_74b5a"]
 
 [node name="LVL_2" type="Node2D" unique_id=1419489253]
 
@@ -72,3 +81,69 @@ rotation = 3.1415927
 [node name="floor_cube4" parent="floors" unique_id=2030629242 instance=ExtResource("10_32vlb")]
 position = Vector2(538, 148)
 rotation = 3.1415927
+
+[node name="bg" parent="." unique_id=1391952208 instance=ExtResource("12_32vlb")]
+z_index = -9
+position = Vector2(85, -33)
+
+[node name="Jacket" type="Sprite2D" parent="." unique_id=2073012269]
+position = Vector2(299, 476)
+texture = ExtResource("13_gpews")
+
+[node name="Pants2" type="Sprite2D" parent="." unique_id=1693650930]
+position = Vector2(730, 412)
+rotation = 0.6292671
+texture = ExtResource("14_wsoh0")
+
+[node name="Jacket2" type="Sprite2D" parent="." unique_id=1425920571]
+position = Vector2(539, 319)
+rotation = 0.88104415
+texture = ExtResource("13_gpews")
+
+[node name="Jacket3" type="Sprite2D" parent="." unique_id=1528020671]
+position = Vector2(334, 121)
+texture = ExtResource("13_gpews")
+
+[node name="Jacket4" type="Sprite2D" parent="." unique_id=1529342012]
+position = Vector2(648, 164)
+texture = ExtResource("15_bo4qa")
+
+[node name="Shirt2" type="Sprite2D" parent="." unique_id=1042926132]
+position = Vector2(423, 180)
+texture = ExtResource("16_gxuvr")
+
+[node name="Shirt1" type="Sprite2D" parent="." unique_id=1377940023]
+position = Vector2(730, -91)
+texture = ExtResource("17_g77ou")
+
+[node name="Towel2" type="Sprite2D" parent="." unique_id=1523552885]
+position = Vector2(962, 94)
+texture = ExtResource("18_snwu5")
+
+[node name="Shirt3" type="Sprite2D" parent="." unique_id=1517614234]
+position = Vector2(360, -54)
+texture = ExtResource("16_gxuvr")
+
+[node name="Shirt4" type="Sprite2D" parent="." unique_id=66227076]
+position = Vector2(563, -32)
+texture = ExtResource("17_g77ou")
+
+[node name="Towel" type="Sprite2D" parent="." unique_id=2020189079]
+position = Vector2(268, -73)
+texture = ExtResource("19_xpg2n")
+
+[node name="Shirt5" type="Sprite2D" parent="." unique_id=1208454967]
+position = Vector2(403, 331)
+texture = ExtResource("16_gxuvr")
+
+[node name="Pants" type="Sprite2D" parent="." unique_id=1002399530]
+position = Vector2(309, 315)
+texture = ExtResource("20_74b5a")
+
+[node name="Jacket5" type="Sprite2D" parent="." unique_id=1609829474]
+position = Vector2(456, -67)
+texture = ExtResource("13_gpews")
+
+[node name="Shirt6" type="Sprite2D" parent="." unique_id=881915008]
+position = Vector2(696, -37)
+texture = ExtResource("16_gxuvr")

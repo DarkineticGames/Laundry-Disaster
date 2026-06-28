@@ -5,13 +5,14 @@
 [ext_resource type="Texture2D" uid="uid://baepjiwojxl88" path="res://assets/UI/buttons/green_button.png" id="2_mf7fl"]
 [ext_resource type="Texture2D" uid="uid://cwort8o7lhbqr" path="res://assets/UI/buttons/grn_button_click.png" id="3_d6l81"]
 [ext_resource type="Texture2D" uid="uid://3umgbl7i6txq" path="res://assets/UI/buttons/grn_button_hover.png" id="4_a1wsg"]
-[ext_resource type="FontFile" uid="uid://bodhohqjn0qat" path="res://Test/assets/brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="5_i7p8e"]
+[ext_resource type="FontFile" uid="uid://bodhohqjn0qat" path="res://assets/UI/fonts/PixelOperator8-Bold.ttf" id="5_i7p8e"]
 [ext_resource type="Texture2D" uid="uid://dgafvwg625opp" path="res://assets/UI/buttons/red_button.png" id="6_sfthw"]
 [ext_resource type="Texture2D" uid="uid://dpwo6siitjw5k" path="res://assets/UI/buttons/red_button_click.png" id="7_n3ahy"]
 [ext_resource type="Texture2D" uid="uid://bstcudekeiscr" path="res://assets/UI/buttons/yellow_button.png" id="8_mtd5q"]
 [ext_resource type="Texture2D" uid="uid://coyov1acnm2lc" path="res://assets/UI/buttons/red_button_hover.png" id="8_scr1a"]
 [ext_resource type="Texture2D" uid="uid://drc4bo8oe3u1v" path="res://assets/UI/buttons/yellow_button_click.png" id="9_dqbul"]
 [ext_resource type="Texture2D" uid="uid://hpxaq8f71fgb" path="res://assets/UI/buttons/yellow_button_hover.png" id="10_nu0op"]
+[ext_resource type="AudioStream" uid="uid://d4iag74jqhs4r" path="res://assets/platforms/freesoundsxx-button-press-beep-269718.mp3" id="13_i7p8e"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6pl1w"]
 atlas = ExtResource("2_mf7fl")
@@ -24,6 +25,18 @@ region = Rect2(21, 24, 86, 21)
 [sub_resource type="AtlasTexture" id="AtlasTexture_0xmu3"]
 atlas = ExtResource("4_a1wsg")
 region = Rect2(21, 24, 86, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dymog"]
+atlas = ExtResource("6_sfthw")
+region = Rect2(4, 23, 56, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_expsl"]
+atlas = ExtResource("7_n3ahy")
+region = Rect2(4, 24, 56, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bj80e"]
+atlas = ExtResource("8_scr1a")
+region = Rect2(4, 24, 56, 21)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_glfox"]
 atlas = ExtResource("8_mtd5q")
@@ -39,18 +52,6 @@ region = Rect2(4, 24, 56, 22)
 [sub_resource type="AtlasTexture" id="AtlasTexture_myynj"]
 atlas = ExtResource("10_nu0op")
 region = Rect2(4, 24, 56, 22)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_dymog"]
-atlas = ExtResource("6_sfthw")
-region = Rect2(4, 23, 56, 21)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_expsl"]
-atlas = ExtResource("7_n3ahy")
-region = Rect2(4, 24, 56, 21)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_bj80e"]
-atlas = ExtResource("8_scr1a")
-region = Rect2(4, 24, 56, 21)
 
 [node name="main" type="Node2D" unique_id=1121871396]
 
@@ -124,6 +125,32 @@ theme_override_fonts/font = ExtResource("5_i7p8e")
 theme_override_font_sizes/font_size = 9
 text = "Play"
 
+[node name="Quit" type="TextureButton" parent="CanvasLayer/MainMenu/MarginContainer/VBoxContainer" unique_id=2018249551]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = SubResource("AtlasTexture_dymog")
+texture_pressed = SubResource("AtlasTexture_expsl")
+texture_hover = SubResource("AtlasTexture_bj80e")
+
+[node name="Label" type="Label" parent="CanvasLayer/MainMenu/MarginContainer/VBoxContainer/Quit" unique_id=734405554]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.24000001
+anchor_top = 0.231
+anchor_right = 0.758
+anchor_bottom = 0.707
+offset_left = 0.011043549
+offset_top = -0.000808239
+offset_right = 0.0030403137
+offset_bottom = 0.003191948
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_i7p8e")
+theme_override_font_sizes/font_size = 8
+text = "Quit"
+
 [node name="Credits" type="TextureButton" parent="CanvasLayer/MainMenu/MarginContainer/VBoxContainer" unique_id=1457062871]
 visible = false
 layout_mode = 2
@@ -151,31 +178,8 @@ theme_override_fonts/font = ExtResource("5_i7p8e")
 theme_override_font_sizes/font_size = 7
 text = "Credits"
 
-[node name="Quit" type="TextureButton" parent="CanvasLayer/MainMenu/MarginContainer/VBoxContainer" unique_id=2018249551]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture_normal = SubResource("AtlasTexture_dymog")
-texture_pressed = SubResource("AtlasTexture_expsl")
-texture_hover = SubResource("AtlasTexture_bj80e")
-
-[node name="Label" type="Label" parent="CanvasLayer/MainMenu/MarginContainer/VBoxContainer/Quit" unique_id=734405554]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.24000001
-anchor_top = 0.231
-anchor_right = 0.758
-anchor_bottom = 0.707
-offset_left = 0.011043549
-offset_top = -0.000808239
-offset_right = 0.0030403137
-offset_bottom = 0.003191948
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("5_i7p8e")
-theme_override_font_sizes/font_size = 8
-text = "Quit"
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=238664974]
+stream = ExtResource("13_i7p8e")
 
 [connection signal="pressed" from="CanvasLayer/MainMenu/MarginContainer/VBoxContainer/Play" to="CanvasLayer" method="_on_play_pressed"]
 [connection signal="pressed" from="CanvasLayer/MainMenu/MarginContainer/VBoxContainer/Quit" to="CanvasLayer" method="_on_quit_button_pressed"]

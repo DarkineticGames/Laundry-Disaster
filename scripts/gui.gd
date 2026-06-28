@@ -1,4 +1,5 @@
 extends CanvasLayer
+@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 
 @onready var animated_knob: AnimatedSprite2D = $"control_panel/Animated-knob"
@@ -10,6 +11,7 @@ var rotation_cycle_timer := 0.0
 var cycle_duration = 16 * rotation_speed
 
 func _ready():
+	
 
 	update_level_text()
 

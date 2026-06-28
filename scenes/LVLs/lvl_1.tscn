@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://0e8lupy5vnai" path="res://scenes/LVLs/lvl_2.tscn" id="5_fqodv"]
 [ext_resource type="PackedScene" uid="uid://bnucscfu21m3y" path="res://scenes/floors/floor_3.tscn" id="6_lkopa"]
 [ext_resource type="PackedScene" uid="uid://3t24tfqjsxei" path="res://scenes/next_level.tscn" id="9_f403a"]
+[ext_resource type="PackedScene" uid="uid://dy6n1gv6kyo3e" path="res://scenes/bg.tscn" id="10_6cf2j"]
 [ext_resource type="PackedScene" uid="uid://ck3rguuq361fm" path="res://scenes/floors/floor_4.tscn" id="10_lkopa"]
 
 [node name="LVL_1" type="Node2D" unique_id=1639338050]
@@ -24,6 +25,7 @@ position = Vector2(512, 174)
 next_level_scene = ExtResource("5_fqodv")
 
 [node name="floors" type="Node2D" parent="." unique_id=1416451768]
+position = Vector2(3, -2)
 
 [node name="floor_1" parent="floors" unique_id=1121320848 instance=ExtResource("4_fqodv")]
 position = Vector2(232, 215)
@@ -47,3 +49,7 @@ scale = Vector2(0.7, 1)
 position = Vector2(602, 146.99998)
 rotation = 1.5707964
 scale = Vector2(0.7, 1)
+
+[node name="bg" parent="." unique_id=1391952208 instance=ExtResource("10_6cf2j")]
+z_index = -9
+position = Vector2(-46, -16)

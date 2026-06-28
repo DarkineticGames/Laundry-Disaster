@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dqpt8irji5pva"
+path="res://.godot/imported/freesound_community-washing-machine-soft-60397 (1).mp3-8e688aab84e94280d6d0ce219277ab79.mp3str"
+
+[deps]
+
+source_file="res://assets/platforms/freesound_community-washing-machine-soft-60397 (1).mp3"
+dest_files=["res://.godot/imported/freesound_community-washing-machine-soft-60397 (1).mp3-8e688aab84e94280d6d0ce219277ab79.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

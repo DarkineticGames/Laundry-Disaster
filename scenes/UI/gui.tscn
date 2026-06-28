@@ -2,11 +2,12 @@
 
 [ext_resource type="Script" uid="uid://djaffodflvare" path="res://scripts/gui.gd" id="1_dk0i5"]
 [ext_resource type="Texture2D" uid="uid://c4x6ldkw784vx" path="res://assets/UI/gameplay_UI only no arrow, flood meter 80×360.png" id="2_3tbu2"]
-[ext_resource type="FontFile" uid="uid://bodhohqjn0qat" path="res://Test/assets/brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="2_dk0i5"]
+[ext_resource type="FontFile" uid="uid://bodhohqjn0qat" path="res://assets/UI/fonts/PixelOperator8-Bold.ttf" id="2_dk0i5"]
 [ext_resource type="Texture2D" uid="uid://dyhu4ik8n1rfg" path="res://assets/UI/dirt-meter.png" id="3_fqfpr"]
 [ext_resource type="Texture2D" uid="uid://u6audoiexa2v" path="res://assets/UI/knob_animated.png" id="5_hmhlj"]
 [ext_resource type="Texture2D" uid="uid://drs4q10d05wft" path="res://assets/UI/dirtmeter_arrow.png" id="5_tk48h"]
 [ext_resource type="Texture2D" uid="uid://bagwjmr2is4p7" path="res://assets/UI/display.png" id="6_lbamw"]
+[ext_resource type="AudioStream" uid="uid://btin8l6uu5xeg" path="res://assets/platforms/dragon-studio-slow-cinematic-clock-ticking-357979.mp3" id="8_lbamw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uyxc2"]
 atlas = ExtResource("5_hmhlj")
@@ -172,3 +173,7 @@ theme_override_font_sizes/font_size = 8
 text = "LVL 01"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1823125095]
+stream = ExtResource("8_lbamw")
+autoplay = true

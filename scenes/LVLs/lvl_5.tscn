@@ -4,14 +4,23 @@
 [ext_resource type="PackedScene" uid="uid://dphngkp4iwbcr" path="res://scenes/level_num.tscn" id="2_7hf2j"]
 [ext_resource type="PackedScene" uid="uid://c857to8qe1ica" path="res://scenes/characters/player.tscn" id="3_megtf"]
 [ext_resource type="PackedScene" uid="uid://3t24tfqjsxei" path="res://scenes/next_level.tscn" id="4_5qtkx"]
+[ext_resource type="PackedScene" uid="uid://dy6n1gv6kyo3e" path="res://scenes/bg.tscn" id="4_5w2ny"]
 [ext_resource type="PackedScene" uid="uid://1xa0ggxbeiul" path="res://scenes/LVLs/lvl_6.tscn" id="5_7hf2j"]
+[ext_resource type="Texture2D" uid="uid://bph75fkc76u2t" path="res://assets/platforms/pants2.png" id="5_t0iyv"]
 [ext_resource type="PackedScene" uid="uid://d2dp4reaygyer" path="res://scenes/floors/floor_2.tscn" id="6_465bc"]
+[ext_resource type="Texture2D" uid="uid://hnhl1gwnin0f" path="res://assets/platforms/shirt2.png" id="6_srinn"]
 [ext_resource type="PackedScene" uid="uid://bnucscfu21m3y" path="res://scenes/floors/floor_3.tscn" id="7_00bwt"]
+[ext_resource type="Texture2D" uid="uid://be1gfw6la3a51" path="res://assets/platforms/pants.png" id="7_y5pno"]
 [ext_resource type="PackedScene" uid="uid://ck3rguuq361fm" path="res://scenes/floors/floor_4.tscn" id="8_5w2ny"]
+[ext_resource type="Texture2D" uid="uid://blcm0u1l5xgly" path="res://assets/platforms/towel2.png" id="8_jx8wc"]
 [ext_resource type="PackedScene" uid="uid://b4tgetybcs4ka" path="res://scenes/floors/floor_5.tscn" id="9_t0iyv"]
+[ext_resource type="Texture2D" uid="uid://cwsv3bryf4pbw" path="res://assets/platforms/towel.png" id="9_y0xs6"]
+[ext_resource type="Texture2D" uid="uid://dp73kh02g2p47" path="res://assets/platforms/jacket.png" id="10_hf4rn"]
 [ext_resource type="PackedScene" uid="uid://8jiukvc1tb5f" path="res://scenes/floors/floor_cube.tscn" id="10_srinn"]
+[ext_resource type="Texture2D" uid="uid://d2xxnxnermap4" path="res://assets/platforms/shirt1.png" id="11_g2h0k"]
 [ext_resource type="PackedScene" uid="uid://dy3k5au2e5g1t" path="res://scenes/hazards/soap_bubbles_pipe.tscn" id="11_y5pno"]
 [ext_resource type="Texture2D" uid="uid://ct2owmwgloes2" path="res://assets/hazards/pipe-valve-closed.png" id="12_b8bck"]
+[ext_resource type="Texture2D" uid="uid://c48gtpgtcs8e2" path="res://assets/platforms/jacket2.png" id="12_h5ono"]
 [ext_resource type="PackedScene" uid="uid://cme2wyn3lqk2i" path="res://scenes/hazards/red_bubbles_pipe.tscn" id="12_m18xg"]
 
 [node name="LVL_5" type="Node2D" unique_id=1095669386]
@@ -24,6 +33,48 @@ level_number = 5
 
 [node name="player" parent="." unique_id=582848631 instance=ExtResource("3_megtf")]
 position = Vector2(329, 322)
+
+[node name="GUI2" parent="player" unique_id=36779317 instance=ExtResource("1_m18xg")]
+
+[node name="Towel3" type="Sprite2D" parent="player" unique_id=761254369]
+position = Vector2(241, -46)
+texture = ExtResource("8_jx8wc")
+
+[node name="Jacket" type="Sprite2D" parent="player" unique_id=1800969802]
+position = Vector2(-126, 15)
+texture = ExtResource("10_hf4rn")
+
+[node name="Jacket3" type="Sprite2D" parent="player/Jacket" unique_id=159277054]
+position = Vector2(532, -67)
+texture = ExtResource("10_hf4rn")
+
+[node name="Pants5" type="Sprite2D" parent="player" unique_id=1681166857]
+position = Vector2(-104, -239)
+texture = ExtResource("7_y5pno")
+
+[node name="Shirt4" type="Sprite2D" parent="player" unique_id=168974747]
+position = Vector2(149, -356)
+texture = ExtResource("6_srinn")
+
+[node name="Pants6" type="Sprite2D" parent="player" unique_id=2083179264]
+position = Vector2(-389, -322)
+texture = ExtResource("5_t0iyv")
+
+[node name="Shirt1" type="Sprite2D" parent="player" unique_id=2146891806]
+position = Vector2(-512, -141)
+texture = ExtResource("11_g2h0k")
+
+[node name="Towel4" type="Sprite2D" parent="player" unique_id=2115293963]
+position = Vector2(-369, -72)
+texture = ExtResource("8_jx8wc")
+
+[node name="Jacket2" type="Sprite2D" parent="player" unique_id=1650546468]
+position = Vector2(400, -211)
+texture = ExtResource("12_h5ono")
+
+[node name="Shirt5" type="Sprite2D" parent="player" unique_id=324029733]
+position = Vector2(297, 23)
+texture = ExtResource("11_g2h0k")
 
 [node name="next_level" parent="." unique_id=715973679 instance=ExtResource("4_5qtkx")]
 position = Vector2(692, 159)
@@ -61,6 +112,11 @@ position = Vector2(-113, 135)
 rotation = 1.5707964
 scale = Vector2(0.8, 1)
 
+[node name="floor_cube2" parent="floors" unique_id=1863515808 instance=ExtResource("10_srinn")]
+z_index = 1
+position = Vector2(186, 211)
+scale = Vector2(0.8, 0.8)
+
 [node name="floor_12" parent="floors" unique_id=1645123279 instance=ExtResource("9_t0iyv")]
 z_index = 1
 position = Vector2(636, 206)
@@ -78,11 +134,6 @@ rotation = 3.1415927
 [node name="floor_cube" parent="floors" unique_id=1518292012 instance=ExtResource("10_srinn")]
 z_index = 1
 position = Vector2(468, 211)
-scale = Vector2(0.8, 0.8)
-
-[node name="floor_cube2" parent="floors" unique_id=1863515808 instance=ExtResource("10_srinn")]
-z_index = 1
-position = Vector2(186, 211)
 scale = Vector2(0.8, 0.8)
 
 [node name="floor_2" parent="floors" unique_id=1159802774 instance=ExtResource("6_465bc")]
@@ -112,3 +163,39 @@ cooldown_time = 2.5
 [node name="Sprite2D" type="Sprite2D" parent="pipes/red_bubbles_pipe2" unique_id=1850775822]
 position = Vector2(34, -46)
 texture = ExtResource("12_b8bck")
+
+[node name="Pants2" type="Sprite2D" parent="." unique_id=363341416]
+position = Vector2(375, 413)
+texture = ExtResource("5_t0iyv")
+
+[node name="bg" parent="." unique_id=1391952208 instance=ExtResource("4_5w2ny")]
+z_index = -7
+position = Vector2(-34, 21)
+
+[node name="Shirt2" type="Sprite2D" parent="." unique_id=64011051]
+position = Vector2(-60, 323)
+texture = ExtResource("6_srinn")
+
+[node name="Pants3" type="Sprite2D" parent="." unique_id=1512257553]
+position = Vector2(277, -75)
+texture = ExtResource("5_t0iyv")
+
+[node name="Pants" type="Sprite2D" parent="." unique_id=388400060]
+position = Vector2(685, -34)
+texture = ExtResource("7_y5pno")
+
+[node name="Pants4" type="Sprite2D" parent="." unique_id=1181485714]
+position = Vector2(681, 289)
+texture = ExtResource("5_t0iyv")
+
+[node name="Shirt3" type="Sprite2D" parent="." unique_id=549335291]
+position = Vector2(-124, 229)
+texture = ExtResource("6_srinn")
+
+[node name="Towel2" type="Sprite2D" parent="." unique_id=95900355]
+position = Vector2(-169, 33)
+texture = ExtResource("8_jx8wc")
+
+[node name="Towel" type="Sprite2D" parent="." unique_id=1229874248]
+position = Vector2(489, 77)
+texture = ExtResource("9_y0xs6")

@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://du6cf3xral87a" path="res://assets/player/first try/sock_die.png" id="3_kqtwu"]
 [ext_resource type="Texture2D" uid="uid://cugog1ego7y2l" path="res://assets/player/first try/sock_idle.png" id="4_atpat"]
 [ext_resource type="Texture2D" uid="uid://cesmik40mvdbp" path="res://assets/player/first try/sock_run.png" id="5_kqtwu"]
+[ext_resource type="AudioStream" uid="uid://ch3tx85yxxoav" path="res://assets/platforms/freesound_community-washing-machine-beep-103422.mp3" id="7_6eyoc"]
+[ext_resource type="AudioStream" uid="uid://b1rvw2rlywnho" path="res://assets/platforms/freesound_community-washing-machine-soft-60397.mp3" id="8_eojnx"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hmhlj"]
 shader = ExtResource("3_dyp2m")
@@ -341,5 +343,12 @@ ignore_rotation = false
 position_smoothing_speed = 10.0
 rotation_smoothing_speed = 10.0
 script = ExtResource("2_dyp2m")
+
+[node name="player beeb" type="AudioStreamPlayer2D" parent="." unique_id=514101866]
+stream = ExtResource("7_6eyoc")
+
+[node name="bg player" type="AudioStreamPlayer2D" parent="." unique_id=1917840354]
+stream = ExtResource("8_eojnx")
+autoplay = true
 
 [connection signal="body_entered" from="FlipPivot/Hurtbox" to="." method="_on_hurtbox_body_entered"]

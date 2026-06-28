@@ -8,6 +8,8 @@ extends CharacterBody2D
 @onready var camera : Camera2D = $PlayerCam
 @onready var flip_timer = $Timer  
 
+@onready var player_beeb: AudioStreamPlayer2D = $"player beeb"
+
 @export var speed := 200.0
 @export var acceleration := 2000.0
 @export var friction := 2500.0
@@ -156,6 +158,7 @@ func _physics_process(delta):
 func flip_world():
 	controls_locked = true
 	shake_strength = 8.0
+	player_beeb.play()
 
 	var tween = create_tween()
 	tween.tween_property(camera, "rotation", camera.rotation + PI, 0.5)

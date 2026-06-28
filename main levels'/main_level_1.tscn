@@ -1,0 +1,105 @@
+[gd_scene format=3 uid="uid://bfkm126orr7p8"]
+
+[ext_resource type="Texture2D" uid="uid://c2u8rvcobqs31" path="res://icon.svg" id="1_k0olj"]
+[ext_resource type="PackedScene" uid="uid://b2w0h62gqiggq" path="res://scenes/kill_zone.tscn" id="2_www42"]
+[ext_resource type="PackedScene" uid="uid://c857to8qe1ica" path="res://scenes/characters/player.tscn" id="3_3ojfy"]
+[ext_resource type="PackedScene" uid="uid://8y16mbssgthp" path="res://scenes/platforms/platf_shirt2.tscn" id="4_ysspd"]
+[ext_resource type="PackedScene" uid="uid://c2el7iisov72w" path="res://scenes/platforms/platf_towel.tscn" id="5_hn2vw"]
+[ext_resource type="PackedScene" uid="uid://ubltm6gopq5s" path="res://scenes/platforms/platf_shirt1.tscn" id="6_wckrw"]
+[ext_resource type="PackedScene" uid="uid://d17wyrkxxlgym" path="res://scenes/platforms/platf_pants2.tscn" id="7_oosde"]
+[ext_resource type="PackedScene" uid="uid://n36201c8bmnt" path="res://scenes/platforms/platf_jacket2.tscn" id="8_fdp74"]
+[ext_resource type="PackedScene" uid="uid://dct5iwwjtxva1" path="res://scenes/platforms/platf_towel2.tscn" id="9_qst2s"]
+[ext_resource type="PackedScene" uid="uid://bnmuhxlsrr82o" path="res://scenes/platforms/platf_pants.tscn" id="10_dqqmw"]
+[ext_resource type="PackedScene" uid="uid://dmaoyg5k3iw5x" path="res://scenes/platforms/bubble_platform.tscn" id="11_t6dlq"]
+[ext_resource type="PackedScene" uid="uid://dy3k5au2e5g1t" path="res://scenes/hazards/soap_bubbles_pipe.tscn" id="12_vrclq"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_s7wsd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s7rlf"]
+size = Vector2(133.61246, 152.97565)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s7wsd"]
+size = Vector2(1363, 54)
+
+[node name="main level 1" type="Node2D" unique_id=255009857]
+
+[node name="kill_zone" parent="." unique_id=1933419617 instance=ExtResource("2_www42")]
+position = Vector2(572, 464)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="kill_zone" unique_id=1692681912]
+position = Vector2(-6, 27)
+shape = SubResource("WorldBoundaryShape2D_s7wsd")
+
+[node name="player" parent="." unique_id=582848631 instance=ExtResource("3_3ojfy")]
+position = Vector2(209, 239)
+
+[node name="main platforms" type="Node" parent="." unique_id=1642526993]
+
+[node name="Sprite2D2" type="Sprite2D" parent="main platforms" unique_id=1159196311]
+position = Vector2(691.00006, 79.00001)
+scale = Vector2(11.046875, 0.3203125)
+texture = ExtResource("1_k0olj")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="main platforms/Sprite2D2" unique_id=1299637171]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="main platforms/Sprite2D2/StaticBody2D" unique_id=2046917945]
+position = Vector2(1.7199402, 1.5609589)
+scale = Vector2(0.9999997, 0.9999999)
+shape = SubResource("RectangleShape2D_s7rlf")
+
+[node name="Sprite2D" type="Sprite2D" parent="main platforms" unique_id=1877798254]
+position = Vector2(684, 338)
+scale = Vector2(10.65625, 0.34375)
+texture = ExtResource("1_k0olj")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="main platforms/Sprite2D" unique_id=1594130255]
+position = Vector2(-64.18768, -983.2727)
+scale = Vector2(0.09384164, 2.9090908)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="main platforms/Sprite2D/StaticBody2D" unique_id=748819587]
+position = Vector2(691.5, 344)
+shape = SubResource("RectangleShape2D_s7wsd")
+
+[node name="other platforming stuff" type="Node" parent="." unique_id=1340253353]
+
+[node name="dirty clothes" type="Node" parent="other platforming stuff" unique_id=2133916283]
+
+[node name="Platf-shirt2" parent="other platforming stuff/dirty clothes" unique_id=676350862 instance=ExtResource("4_ysspd")]
+position = Vector2(924, 193)
+
+[node name="Platf-towel" parent="other platforming stuff/dirty clothes" unique_id=1368979849 instance=ExtResource("5_hn2vw")]
+position = Vector2(805, 159)
+
+[node name="Platf-shirt1" parent="other platforming stuff/dirty clothes" unique_id=379119777 instance=ExtResource("6_wckrw")]
+position = Vector2(217, 265)
+
+[node name="Platf-pants3" parent="other platforming stuff/dirty clothes" unique_id=1729114453 instance=ExtResource("7_oosde")]
+position = Vector2(1110, 221)
+
+[node name="Platf-jacket2" parent="other platforming stuff/dirty clothes" unique_id=1320281922 instance=ExtResource("8_fdp74")]
+position = Vector2(328, 211)
+
+[node name="Platf-towel2" parent="other platforming stuff/dirty clothes" unique_id=1705327262 instance=ExtResource("9_qst2s")]
+position = Vector2(687, 259)
+
+[node name="Platf-pants2" parent="other platforming stuff/dirty clothes" unique_id=1611265635 instance=ExtResource("7_oosde")]
+position = Vector2(1270, 232)
+
+[node name="Platf-pants" parent="other platforming stuff/dirty clothes" unique_id=568653239 instance=ExtResource("10_dqqmw")]
+position = Vector2(557, 242)
+
+[node name="bubles" type="Node" parent="other platforming stuff" unique_id=1013286557]
+
+[node name="BubblePlatform" parent="other platforming stuff/bubles" unique_id=869779138 instance=ExtResource("11_t6dlq")]
+position = Vector2(436, 240)
+
+[node name="BubblePlatform2" parent="other platforming stuff/bubles" unique_id=288882534 instance=ExtResource("11_t6dlq")]
+position = Vector2(1177, 251)
+
+[node name="soap_bubbles_pipe" parent="other platforming stuff/bubles" unique_id=1913815980 instance=ExtResource("12_vrclq")]
+position = Vector2(1011, 319)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=928464459]
+position = Vector2(546, 373)
+scale = Vector2(24.015625, 7.890625)
+texture = ExtResource("1_k0olj")
